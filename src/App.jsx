@@ -10,7 +10,7 @@ import { Toaster } from 'react-hot-toast';
 import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
 
-import CssBaseline from '@mui/material/CssBaseline';
+// import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
       <div>
         <Toaster />
       </div>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <UserProvider>
         <Header />
         <Switch>
@@ -36,7 +36,7 @@ export default function App() {
           </PrivateRoute>
         </Switch>
       </UserProvider>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
     </>
   );
 }

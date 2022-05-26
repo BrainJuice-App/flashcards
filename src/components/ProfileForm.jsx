@@ -1,67 +1,86 @@
-// import React from 'react';
-// import { useProfileContext } from '../../context/ProfileContext';
-// import { Box, Button, Form, FormField, TextInput } from 'grommet';
-// import styled from 'styled-components';
-// export default function ProfileForm({ handleSubmit }) {
-//   const {
-//     setFirstName,
-//     setLastName,
-//     setUsername,
-//     setEmail,
-//     email,
-//     username,
-//     lastName,
-//     firstName,
-//   } = useProfileContext();
-//   return (
-//     <Box fill align="center" justify="center">
-//       <Form onSubmit={handleSubmit}>
-//         <Box width="medium">
-//           <FormField name="first_name">
-//             <TextInput
-//               type="text"
-//               name="first_name"
-//               placeholder="First Name"
-//               value={firstName ? firstName : ''}
-//               onChange={(e) => setFirstName(e.target.value)}
-//             />
-//           </FormField>
-//           <FormField name="last_name">
-//             <TextInput
-//               type="text"
-//               name="last_name"
-//               placeholder="Last Name"
-//               value={lastName ? lastName : ''}
-//               onChange={(e) => setLastName(e.target.value)}
-//             />
-//           </FormField>
-//           <FormField name="username">
-//             <TextInput
-//               type="text"
-//               name="username"
-//               placeholder="Username"
-//               value={username}
-//               onChange={(e) => setUsername(e.target.value)}
-//             />
-//           </FormField>
-//           <label>Email</label>
-//           <FormField name="email">
-//             <TextInput
-//               type="email"
-//               name="email"
-//               placeholder="Email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//             />
-//           </FormField>{' '}
-//           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-//             <ButtonColor type="submit" label="Save Profile" />
-//           </Box>
-//         </Box>
-//       </Form>
-//     </Box>
-//   );
-// }
-// const ButtonColor = styled(Button)`
-//   color: #f4f1de;
-// `;
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import {
+  Button,
+  Box,
+  createTheme,
+  ThemeProvider,
+  Container,
+  CssBaseline,
+  Avatar,
+  Typography,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Grid,
+} from '@mui/material';
+
+const theme = createTheme();
+
+export default function ProfileForm({ handleSubmit }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Typography component="h1" variant="h5"></Typography>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              value=""
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value=""
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              onClick={handleSubmit}
+              variant="contained"
+              style={{ margin: '20px' }}
+            ></Button>
+            <Grid container>
+              <Grid item xs></Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
+}
