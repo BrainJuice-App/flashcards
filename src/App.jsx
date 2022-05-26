@@ -7,7 +7,10 @@ import Home from './views/Home';
 import Auth from './views/Auth';
 import Header from './components/Header';
 import { Toaster } from 'react-hot-toast';
-// import CssBaseline from '@mui/material/CssBaseline';
+import Profile from './views/Profile';
+import ProfileEdit from './views/ProfileEdit';
+
+import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App() {
   return (
@@ -15,19 +18,25 @@ export default function App() {
       <div>
         <Toaster />
       </div>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <UserProvider>
         <Header />
         <Switch>
           <Route path="/auth">
             <Auth />
           </Route>
+          <PrivateRoute exact path="/profile">
+            <Profile />
+          </PrivateRoute>
+          <PrivateRoute exact path="/profile/:id/edit">
+            <ProfileEdit />
+          </PrivateRoute>
           <PrivateRoute path="/">
             <Home />
           </PrivateRoute>
         </Switch>
       </UserProvider>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
     </>
   );
 }
