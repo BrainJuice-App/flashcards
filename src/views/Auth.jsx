@@ -4,7 +4,7 @@ import styles from './Auth.css';
 import { toast } from 'react-hot-toast';
 
 import { useUser } from '../context/UserContext';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import {
   Button,
@@ -28,7 +28,6 @@ const theme = createTheme();
 export default function Auth() {
   const { login, signup } = useUser();
   const history = useHistory();
-  const location = useLocation();
 
   const [isSignUp, setIsSignUp] = useState(false);
 
