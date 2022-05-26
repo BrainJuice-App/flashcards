@@ -3,11 +3,27 @@ import { useState } from 'react';
 import styles from './Auth.css';
 import { toast } from 'react-hot-toast';
 
-import ReactDOM from 'react-dom';
-import Button from '@mui/material/Button';
-
 import { useUser } from '../context/UserContext';
 import { useHistory, useLocation } from 'react-router-dom';
+
+import {
+  Button,
+  Box,
+  createTheme,
+  ThemeProvider,
+  Container,
+  CssBaseline,
+  Avatar,
+  Typography,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Grid,
+} from '@mui/material';
+
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+
+const theme = createTheme();
 
 export default function Auth() {
   const { login, signup } = useUser();
@@ -26,7 +42,7 @@ export default function Auth() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // to do: add toast
+
     try {
       if (isSignUp) {
         await signup(email, password);
@@ -34,68 +50,101 @@ export default function Auth() {
         await login(email, password);
       }
 
-      const url = location.state.origin ? location.state.origin.pathname : '/';
-      history.replace(url);
+      history.push('/');
     } catch (error) {
-      setError(error.message);
+      setError(error);
+      console.log(error);
     }
     toast.success(`Welcome ${email}!`);
   };
 
   return (
-    <div className={styles['auth-page']}>
-      <h1>Superlative Books</h1>
-      <div className={styles['auth-menu']}>
-        <span
-          className={`${styles['auth-toggle']} ${
-            isSignUp ? '' : styles.selected
-          }`}
-          onClick={toggleAuth}
-        >
-          Sign In
-        </span>
-        <span
-          className={`${styles['auth-toggle']} ${
-            isSignUp ? styles.selected : ''
-          }`}
-          onClick={toggleAuth}
-        >
-          Sign Up
-        </span>
-      </div>
+    <>
       {error && <p>{`${error}`}</p>}
-      <form className={styles['auth']} onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+            sx={{
+              marginTop: 8,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
             }}
-          />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </label>
-        {/* <button>{isSignUp ? 'Sign up' : 'Sign in'}</button> */}
-        <Button
-          onClick={handleSubmit}
-          variant="contained"
-          style={{ margin: '20px' }}
-        >
-          {isSignUp ? 'Sign up' : 'Sign in'}
-        </Button>
-      </form>
-    </div>
+          >
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              <span
+                className={`${styles['auth-toggle']} ${
+                  isSignUp ? '' : styles.selected
+                }`}
+                onClick={toggleAuth}
+              >
+                Sign In
+              </span>
+              <span
+                className={`${styles['auth-toggle']} ${
+                  isSignUp ? styles.selected : ''
+                }`}
+                onClick={toggleAuth}
+              >
+                Sign Up
+              </span>
+            </Typography>
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              noValidate
+              sx={{ mt: 1 }}
+            >
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Button
+                onClick={handleSubmit}
+                variant="contained"
+                style={{ margin: '20px' }}
+              >
+                {isSignUp ? 'Sign up' : 'Sign in'}
+              </Button>
+              <Grid container>
+                <Grid item xs></Grid>
+              </Grid>
+            </Box>
+          </Box>
+        </Container>
+      </ThemeProvider>
+    </>
   );
 }
