@@ -9,6 +9,7 @@ export default function CardList() {
     const getData = async () => {
       const data = await getCards();
       setCards(data);
+      console.log('data', data);
       setLoading(false);
     };
     getData();

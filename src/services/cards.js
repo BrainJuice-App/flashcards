@@ -1,4 +1,4 @@
-import { checkError, client } from './client.';
+import { checkError, client } from './client';
 
 export async function getCards() {
   const resp = await client.from('cards').select('*');
