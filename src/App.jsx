@@ -9,6 +9,7 @@ import Header from './components/Header';
 import { Toaster } from 'react-hot-toast';
 import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
+import { ProfileProvider } from './context/ProfileContext';
 
 // import CssBaseline from '@mui/material/CssBaseline';
 
@@ -20,21 +21,23 @@ export default function App() {
       </div>
       {/* <CssBaseline /> */}
       <UserProvider>
-        <Header />
-        <Switch>
-          <Route path="/auth">
-            <Auth />
-          </Route>
-          <PrivateRoute exact path="/profile">
-            <Profile />
-          </PrivateRoute>
-          <PrivateRoute exact path="/profile/:id/edit">
-            <ProfileEdit />
-          </PrivateRoute>
-          <PrivateRoute path="/">
-            <Home />
-          </PrivateRoute>
-        </Switch>
+        <ProfileProvider>
+          <Header />
+          <Switch>
+            <Route path="/auth">
+              <Auth />
+            </Route>
+            <PrivateRoute exact path="/profile">
+              <Profile />
+            </PrivateRoute>
+            <PrivateRoute exact path="/profile/:id/edit">
+              <ProfileEdit />
+            </PrivateRoute>
+            <PrivateRoute path="/">
+              <Home />
+            </PrivateRoute>
+          </Switch>
+        </ProfileProvider>
       </UserProvider>
       {/* <CssBaseline /> */}
     </>
