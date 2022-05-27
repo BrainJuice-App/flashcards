@@ -25,11 +25,11 @@ export default function CardList() {
       <ul>
         {cards.map((card) => (
           <li key={card.id}>
-            <Link to={`/cardList/${card.id}`}>{card.name}</Link>
+            <Link to={`/${card.id}`}>{card.name}</Link>
           </li>
         ))}
       </ul>
-      <Route path={`${path}/:id`}>
+      <Route path="/:id">
         <CardView cards={cards} />
       </Route>
     </>

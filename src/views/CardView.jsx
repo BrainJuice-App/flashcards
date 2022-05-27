@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useCard } from '../context/cardsContext/cardsContext';
 
 export default function CardView({ cards = [] }) {
   console.log('cards', cards);

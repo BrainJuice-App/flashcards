@@ -2,7 +2,6 @@ import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
 import { UserProvider } from './context/UserContext';
-import Home from './views/Home';
 
 import Auth from './views/Auth';
 import Header from './components/Header';
@@ -20,14 +19,14 @@ export default function App() {
       <UserProvider>
         <Header />
         <Switch>
-          <Route path="/cardList">
+          {/* <Route path="/cardList">
             <CardList />
-          </Route>
+          </Route> */}
           <Route path="/auth">
             <Auth />
           </Route>
           <PrivateRoute path="/">
-            <Home />
+            <CardList />
           </PrivateRoute>
         </Switch>
       </UserProvider>
