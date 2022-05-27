@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
+import { useRouteMatch, Link, Route } from 'react-router-dom';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { getCards } from '../services/cards';
 import CardView from '../views/CardView';
 
 export default function CardList() {
+  const { url, path } = useRouteMatch();
+  console.log('url, path', url, path);
   const { cards, setCards, loading, setLoading } = useCard();
 
   useEffect(() => {
@@ -21,14 +22,16 @@ export default function CardList() {
 
   return (
     <>
-      <div>
-        hello
+      <ul>
         {cards.map((card) => (
-          <Link to={`/card-view/${card.id}`}>
-            <p key={card.id}>{card.name}</p>
-          </Link>
+          <li key={card.id}>
+            <Link to={`/cardList/${card.id}`}>{card.name}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
+      <Route path={`${path}/:id`}>
+        <CardView cards={cards} />
+      </Route>
     </>
   );
 }

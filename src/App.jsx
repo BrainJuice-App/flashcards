@@ -7,7 +7,7 @@ import Home from './views/Home';
 import Auth from './views/Auth';
 import Header from './components/Header';
 import { Toaster } from 'react-hot-toast';
-import CardView from './views/CardView';
+import CardList from './components/CardList';
 // import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App() {
@@ -20,8 +20,8 @@ export default function App() {
       <UserProvider>
         <Header />
         <Switch>
-          <Route path="/card-view/:id">
-            <CardView />
+          <Route path="/cardList">
+            <CardList />
           </Route>
           <Route path="/auth">
             <Auth />
