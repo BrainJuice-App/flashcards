@@ -9,9 +9,11 @@ export default function Header() {
   const handleLogout = async () => {
     await logout();
   };
-
   const handleRedirect = () => {
     history.replace('/auth');
+  };
+  const handleHomeButton = () => {
+    history.replace('/');
   };
 
   return (
@@ -31,6 +33,7 @@ export default function Header() {
               Signin/Signup Button
             </button>
           )}
+          <button onClick={handleHomeButton}>Home</button>
         </div>
       </div>
       <hr />
