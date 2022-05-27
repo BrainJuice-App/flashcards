@@ -11,6 +11,7 @@ import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
 import { ProfileProvider } from './context/ProfileContext';
 
+import CardView from './views/CardView';
 // import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App() {
@@ -38,6 +39,18 @@ export default function App() {
             </PrivateRoute>
           </Switch>
         </ProfileProvider>
+        <Header />
+        <Switch>
+          <Route path="/card-view/:id">
+            <CardView />
+          </Route>
+          <Route path="/auth">
+            <Auth />
+          </Route>
+          <PrivateRoute path="/">
+            <Home />
+          </PrivateRoute>
+        </Switch>
       </UserProvider>
       {/* <CssBaseline /> */}
     </>
