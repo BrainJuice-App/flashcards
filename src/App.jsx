@@ -9,8 +9,10 @@ import Header from './components/Header';
 import { Toaster } from 'react-hot-toast';
 import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
+import { ProfileProvider } from './context/ProfileContext';
 
-import CssBaseline from '@mui/material/CssBaseline';
+import CardView from './views/CardView';
+// import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App() {
   return (
@@ -18,25 +20,39 @@ export default function App() {
       <div>
         <Toaster />
       </div>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <UserProvider>
+        <ProfileProvider>
+          <Header />
+          <Switch>
+            <Route path="/auth">
+              <Auth />
+            </Route>
+            <PrivateRoute exact path="/profile">
+              <Profile />
+            </PrivateRoute>
+            <PrivateRoute exact path="/profile/:id/edit">
+              <ProfileEdit />
+            </PrivateRoute>
+            <PrivateRoute path="/">
+              <Home />
+            </PrivateRoute>
+          </Switch>
+        </ProfileProvider>
         <Header />
         <Switch>
+          <Route path="/card-view/:id">
+            <CardView />
+          </Route>
           <Route path="/auth">
             <Auth />
           </Route>
-          <PrivateRoute exact path="/profile">
-            <Profile />
-          </PrivateRoute>
-          <PrivateRoute exact path="/profile/:id/edit">
-            <ProfileEdit />
-          </PrivateRoute>
           <PrivateRoute path="/">
             <Home />
           </PrivateRoute>
         </Switch>
       </UserProvider>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
     </>
   );
 }

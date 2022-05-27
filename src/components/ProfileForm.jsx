@@ -1,67 +1,113 @@
-// import React from 'react';
-// import { useProfileContext } from '../../context/ProfileContext';
-// import { Box, Button, Form, FormField, TextInput } from 'grommet';
-// import styled from 'styled-components';
-// export default function ProfileForm({ handleSubmit }) {
-//   const {
-//     setFirstName,
-//     setLastName,
-//     setUsername,
-//     setEmail,
-//     email,
-//     username,
-//     lastName,
-//     firstName,
-//   } = useProfileContext();
-//   return (
-//     <Box fill align="center" justify="center">
-//       <Form onSubmit={handleSubmit}>
-//         <Box width="medium">
-//           <FormField name="first_name">
-//             <TextInput
-//               type="text"
-//               name="first_name"
-//               placeholder="First Name"
-//               value={firstName ? firstName : ''}
-//               onChange={(e) => setFirstName(e.target.value)}
-//             />
-//           </FormField>
-//           <FormField name="last_name">
-//             <TextInput
-//               type="text"
-//               name="last_name"
-//               placeholder="Last Name"
-//               value={lastName ? lastName : ''}
-//               onChange={(e) => setLastName(e.target.value)}
-//             />
-//           </FormField>
-//           <FormField name="username">
-//             <TextInput
-//               type="text"
-//               name="username"
-//               placeholder="Username"
-//               value={username}
-//               onChange={(e) => setUsername(e.target.value)}
-//             />
-//           </FormField>
-//           <label>Email</label>
-//           <FormField name="email">
-//             <TextInput
-//               type="email"
-//               name="email"
-//               placeholder="Email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//             />
-//           </FormField>{' '}
-//           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-//             <ButtonColor type="submit" label="Save Profile" />
-//           </Box>
-//         </Box>
-//       </Form>
-//     </Box>
-//   );
-// }
-// const ButtonColor = styled(Button)`
-//   color: #f4f1de;
-// `;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { GiBrain } from 'react-icons/gi';
+
+import {
+  Button,
+  Box,
+  createTheme,
+  ThemeProvider,
+  Container,
+  CssBaseline,
+  Avatar,
+  Typography,
+  TextField,
+  Grid,
+} from '@mui/material';
+
+const theme = createTheme();
+
+export default function ProfileForm({ handleSubmit }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <GiBrain />
+          </Avatar>
+
+          <Typography component="h1" variant="h5"></Typography>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
+            <TextField
+              margin="normal"
+              rows
+              id="first_name"
+              label="First Name"
+              name="first_name"
+              autoFocus
+              value=""
+              onChange={(e) => {}}
+            />
+            <TextField
+              margin="normal"
+              rows
+              id="last_name"
+              label="Last Name"
+              name="last_name"
+              autoFocus
+              value=""
+              onChange={(e) => {}}
+            />
+            <TextField
+              margin="normal"
+              rows
+              id="user_name"
+              label="Username"
+              name="user_name"
+              autoFocus
+              value=""
+              onChange={(e) => {}}
+            />
+
+            <TextField
+              margin="normal"
+              rows
+              id="email"
+              label="Email"
+              name="Email"
+              autoFocus
+              value=""
+              onChange={(e) => {}}
+            />
+
+            <Grid item xs={12}>
+              <TextField
+                margin="normal"
+                fullWidth
+                id="bio"
+                label="Bio"
+                name="bio"
+                value=""
+                onChange={(e) => {}}
+              />
+            </Grid>
+
+            <Button
+              onClick={handleSubmit}
+              variant="contained"
+              style={{ margin: '20px' }}
+            >
+              Submit
+            </Button>
+            <Grid container>
+              <Grid item xs></Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
+}
