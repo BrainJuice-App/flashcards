@@ -29,14 +29,27 @@ export default function Profile() {
     const fetchProfile = async () => {
       const data = await getProfile(user.id);
       console.log(data);
-      setFirstName(data.user.first_name);
+      setFirstName(data.first_name);
+      setLastName(data.last_name);
+      setUsername(data.username);
+      setBio(data.bio);
     };
     fetchProfile();
   }, []);
 
   return (
     <>
-      <div>{user.email}'s Profile</div>
+      <div>
+        <h2>{username ? username : user.email}'s Profile</h2>
+        <h3>
+          {firstName} {lastName}
+        </h3>
+        <p>{bio}</p>
+      </div>
+      <div>
+        <h2>Your Personal Cards</h2>
+      </div>
+
       <button onClick={handleEditButtonClick}>Edit</button>
     </>
   );
