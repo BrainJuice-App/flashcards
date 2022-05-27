@@ -23,6 +23,7 @@ import {
 } from '@mui/material';
 
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { createProfile } from '../services/profile';
 
 const theme = createTheme();
 
