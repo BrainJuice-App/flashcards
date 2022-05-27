@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { GiBrain } from 'react-icons/gi';
+import { useProfileContext } from '../context/ProfileContext';
 
 import {
   Button,
@@ -17,7 +18,18 @@ import {
 
 const theme = createTheme();
 
-export default function ProfileForm({ handleSubmit }) {
+export default function ProfileForm({ submitProfileHandler }) {
+  const {
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    username,
+    setUsername,
+
+    bio,
+    setBio,
+  } = useProfileContext();
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -37,50 +49,39 @@ export default function ProfileForm({ handleSubmit }) {
           <Typography component="h1" variant="h5"></Typography>
           <Box
             component="form"
-            onSubmit={handleSubmit}
+            onSubmit={submitProfileHandler}
             noValidate
             sx={{ mt: 1 }}
           >
             <TextField
               margin="normal"
-              rows
+              fullWidth
               id="first_name"
               label="First Name"
               name="first_name"
               autoFocus
-              value=""
-              onChange={(e) => {}}
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <TextField
               margin="normal"
-              rows
+              fullWidth
               id="last_name"
               label="Last Name"
               name="last_name"
               autoFocus
-              value=""
-              onChange={(e) => {}}
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
             />
             <TextField
               margin="normal"
-              rows
+              fullWidth
               id="user_name"
               label="Username"
               name="user_name"
               autoFocus
-              value=""
-              onChange={(e) => {}}
-            />
-
-            <TextField
-              margin="normal"
-              rows
-              id="email"
-              label="Email"
-              name="Email"
-              autoFocus
-              value=""
-              onChange={(e) => {}}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
 
             <Grid item xs={12}>
@@ -90,13 +91,13 @@ export default function ProfileForm({ handleSubmit }) {
                 id="bio"
                 label="Bio"
                 name="bio"
-                value=""
-                onChange={(e) => {}}
+                value={bio}
+                onChange={(e) => setBio(e.target.value)}
               />
             </Grid>
 
             <Button
-              onClick={handleSubmit}
+              onClick={submitProfileHandler}
               variant="contained"
               style={{ margin: '20px' }}
             >
