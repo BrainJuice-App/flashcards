@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import styles from './Auth.css';
 import { toast } from 'react-hot-toast';
+import { GiBrain } from 'react-icons/gi';
 
 import { useUser } from '../context/UserContext';
 import { useHistory } from 'react-router-dom';
@@ -72,7 +73,7 @@ export default function Auth() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+              <GiBrain />
             </Avatar>
             <Typography component="h1" variant="h5">
               <span
