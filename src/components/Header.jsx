@@ -16,6 +16,10 @@ export default function Header() {
     history.replace('/');
   };
 
+  const redirectToCreateCard = () => {
+    history.replace(`/createCard`);
+  };
+
   return (
     <>
       <div>
@@ -34,6 +38,7 @@ export default function Header() {
             </button>
           )}
           <button onClick={handleHomeButton}>Home</button>
+          <button onClick={redirectToCreateCard}> Create Card</button>
         </div>
       </div>
       <hr />
