@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { useUser } from '../context/UserContext';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 export default function Header() {
   const { user, logout } = useUser();
@@ -20,7 +20,9 @@ export default function Header() {
         <h1>Header for our APP</h1>
         <div>
           <div>
-            <h4>{user ? user.email : 'Unregistered Guest'}</h4>
+            <Link to="/profile">
+              <h4>{user ? user.email : 'Unregistered Guest'}</h4>
+            </Link>
           </div>
           {user ? (
             <button onClick={() => handleLogout()}>Logout Button</button>
