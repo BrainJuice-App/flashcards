@@ -34,23 +34,16 @@ export default function App() {
             <PrivateRoute exact path="/profile/:id/edit">
               <ProfileEdit />
             </PrivateRoute>
+
+            <Route path="/card-view/:id">
+              <CardView />
+            </Route>
+
             <PrivateRoute path="/">
               <Home />
             </PrivateRoute>
           </Switch>
         </ProfileProvider>
-        <Header />
-        <Switch>
-          <Route path="/card-view/:id">
-            <CardView />
-          </Route>
-          <Route path="/auth">
-            <Auth />
-          </Route>
-          <PrivateRoute path="/">
-            <Home />
-          </PrivateRoute>
-        </Switch>
       </UserProvider>
       {/* <CssBaseline /> */}
     </>
