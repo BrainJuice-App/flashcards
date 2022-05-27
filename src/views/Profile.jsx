@@ -24,6 +24,9 @@ export default function Profile() {
   const handleEditButtonClick = () => {
     history.push(`/profile/${user.id}/edit`);
   };
+  const redirectToCreateCard = () => {
+    history.replace(`/createCard`);
+  };
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -48,6 +51,7 @@ export default function Profile() {
       </div>
       <div>
         <h2>Your Personal Cards</h2>
+        <button onClick={redirectToCreateCard}> Create Card</button>
       </div>
 
       <button onClick={handleEditButtonClick}>Edit</button>
