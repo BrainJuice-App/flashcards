@@ -6,3 +6,7 @@ export async function getCards() {
   return checkError(resp);
 }
 
+export async function createCard(card) {
+  const resp = await client.from('cards').insert(card);
+  return checkError(resp);
+}

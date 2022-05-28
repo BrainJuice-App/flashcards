@@ -29,20 +29,4 @@ export async function updateProfile(profile) {
     .match({ id: profile.id });
 
   return checkError(resp);
-
-  ///find out what profile is///
 }
-
-// export async function updateProfileData(
-//   userName,
-//   profile_picture,
-//   bio,
-//   favorite_food
-// ) {
-//   const user = await client
-//     .from('profiles')
-//     .update({ profile_picture, userName, bio, favorite_food })
-//     .match({ id: getUserId() });
-
-//   return checkError(user);
-// }

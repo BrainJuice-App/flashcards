@@ -5,6 +5,7 @@ export const CardContext = createContext();
 export const CardProvider = ({ children }) => {
   const [cards, setCards] = useState({});
   const [name, setName] = useState('');
+  const [creator, setCreator] = useState('');
   const [content, setContent] = useState('');
   const [review, setReview] = useState('');
   const [loading, setLoading] = useState(true);
@@ -17,6 +18,8 @@ export const CardProvider = ({ children }) => {
         setName,
         content,
         setContent,
+        creator,
+        setCreator,
         review,
         setReview,
         loading,
