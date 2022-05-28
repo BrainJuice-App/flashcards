@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import { deleteCard } from '../../services/cards';
 
 export const CardContext = createContext();
 
@@ -9,6 +10,11 @@ export const CardProvider = ({ children }) => {
   const [content, setContent] = useState('');
   const [review, setReview] = useState('');
   const [loading, setLoading] = useState(true);
+  const [card, setCard] = useState({});
+
+  const handleDelete = async (card) => {
+    await deleteCard(card.id);
+  };
   return (
     <CardContext.Provider
       value={{
@@ -24,6 +30,9 @@ export const CardProvider = ({ children }) => {
         setReview,
         loading,
         setLoading,
+        handleDelete,
+        card,
+        setCard,
       }}
     >
       {children}
