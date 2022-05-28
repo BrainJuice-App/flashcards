@@ -9,6 +9,8 @@ const ProfileProvider = ({ children }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [bio, setBio] = useState('');
+  const [avatarUrl, setAvatarUrl] = useState(null);
+  const [avatar_Url, setAvatar_Url] = useState(null);
   ///image///
 
   return (
@@ -24,6 +26,10 @@ const ProfileProvider = ({ children }) => {
         setEmail,
         bio,
         setBio,
+        avatarUrl,
+        setAvatarUrl,
+        avatar_Url,
+        setAvatar_Url,
       }}
     >
       {children}
