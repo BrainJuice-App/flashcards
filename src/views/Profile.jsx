@@ -54,7 +54,7 @@ export default function Profile() {
         <button onClick={redirectToCreateCard}> Create Card</button>
       </div>
 
-      <button onClick={handleEditButtonClick}>Edit</button>
+      <button onClick={handleEditButtonClick}>Edit Profile</button>
     </>
   );
 }

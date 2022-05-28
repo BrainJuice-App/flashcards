@@ -19,17 +19,16 @@ export default function Header() {
   const redirectToCreateCard = () => {
     history.replace(`/createCard`);
   };
+  const redirectToProfile = () => {
+    history.replace(`/profile`);
+  };
 
   return (
     <>
       <div>
         <h1>Header for our APP</h1>
         <div>
-          <div>
-            <Link to="/profile">
-              <h4>{user ? user.email : 'Unregistered Guest'}</h4>
-            </Link>
-          </div>
+          <button onClick={redirectToProfile}>Profile</button>
           {user ? (
             <button onClick={() => handleLogout()}>Logout Button</button>
           ) : (
