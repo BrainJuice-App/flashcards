@@ -59,7 +59,7 @@ export default function Profile() {
       <div>
         <h2>Your Personal Cards</h2>
 
-        <UserCards />
+        {/* <UserCards /> */}
 
         <button onClick={redirectToCreateCard}> Create Card</button>
       </div>

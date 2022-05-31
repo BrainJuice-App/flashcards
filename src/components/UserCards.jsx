@@ -29,9 +29,9 @@ export default function UserCards() {
         ))}
       </ul>
 
-      <Route path="/cardView">
+      {/* <Route path="/cardView">
         <CardView cards={cards} />
-      </Route>
+      </Route> */}
     </>
   );
 }

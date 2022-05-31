@@ -30,9 +30,9 @@ export default function App() {
             <Route path="/auth">
               <Auth />
             </Route>
-            <PrivateRoute exact path="/:id">
+            {/* <PrivateRoute exact path="/:id">
               <CardView />
-            </PrivateRoute>
+            </PrivateRoute> */}
             <PrivateRoute exact path="/userCards">
               <UserCards />
             </PrivateRoute>

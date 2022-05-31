@@ -21,8 +21,8 @@ export default function CardView() {
     try {
       const getData = async () => {
         const cards = await getProfileCards();
+        console.log(cards, id);
         const selectedCard = cards.find((card) => card.id === Number(id));
-        console.log(selectedCard);
         setCard(selectedCard);
       };
       getData();
@@ -33,8 +33,8 @@ export default function CardView() {
   return (
     <div>
       <p>{error}</p>
-      <p key={card.id}>{card.name}</p>
-      <p key={card.id}>{card.content}</p>
+      {/* <p key={card.id}>{card.name}</p>
+      <p key={card.id}>{card.content}</p> */}
       <button onClick={handleEdit}>edit card</button>
       <button onClick={handleDelete}>delete card</button>
     </div>
