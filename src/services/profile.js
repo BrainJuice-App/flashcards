@@ -25,8 +25,16 @@ export async function updateProfile(profile) {
       last_name: profile.last_name,
       username: profile.username,
       bio: profile.bio,
+      image: profile.image,
     })
     .match({ id: profile.id });
 
+  return checkError(resp);
+}
+
+export async function fetchSignedUrl(x) {
+  const resp = await client.storage
+    .from('profilebucket')
+    .createSignedUrl(x, 315360000);
   return checkError(resp);
 }

@@ -17,10 +17,12 @@ export default function Profile() {
     setLastName,
     username,
     setUsername,
-    email,
-    setEmail,
     bio,
     setBio,
+    setAvatarUrl,
+    imageUrl,
+    image,
+    setImage,
   } = useProfileContext();
 
   const handleEditButtonClick = () => {
@@ -38,6 +40,7 @@ export default function Profile() {
       setLastName(data.last_name);
       setUsername(data.username);
       setBio(data.bio);
+      setAvatarUrl(data.image);
     };
     fetchProfile();
   }, []);
@@ -50,6 +53,8 @@ export default function Profile() {
           {firstName} {lastName}
         </h3>
         <p>{bio}</p>
+        <img src={imageUrl} height="150" />
+        {/* /// removes image on refresh, needs to be changed to image// */}
       </div>
       <div>
         <h2>Your Personal Cards</h2>
