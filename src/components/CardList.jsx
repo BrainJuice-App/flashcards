@@ -27,9 +27,9 @@ export default function CardList() {
           </li>
         ))}
       </ul>
-      <Route path="/:id">
+      {/* <Route path="/:id">
         <CardView cards={cards} />
-      </Route>
+      </Route> */}
     </>
   );
 }
