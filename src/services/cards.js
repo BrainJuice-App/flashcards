@@ -32,6 +32,7 @@ export async function getProfileCards() {
   return checkError(profileCard);
 }
 export async function updateCards(card) {
+  console.log('update', card);
   const resp = await client
     .from('cards')
     .update({
