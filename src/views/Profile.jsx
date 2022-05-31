@@ -29,9 +29,6 @@ export default function Profile() {
   const redirectToCreateCard = () => {
     history.replace(`/createCard`);
   };
-  const redirectToUserCards = () => {
-    history.push(`/userCards`);
-  };
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -57,7 +54,7 @@ export default function Profile() {
       <div>
         <h2>Your Personal Cards</h2>
 
-        <UserCards onClick={redirectToUserCards} />
+        <UserCards />
 
         <button onClick={redirectToCreateCard}> Create Card</button>
       </div>

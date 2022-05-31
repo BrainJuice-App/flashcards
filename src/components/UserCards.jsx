@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { getProfileCards } from '../services/cards';
+import CardView from '../views/CardView';
 
 export default function UserCards() {
   const { cards, setCards, loading, setLoading } = useCard();
@@ -10,7 +11,7 @@ export default function UserCards() {
     const getData = async () => {
       const data = await getProfileCards();
       setCards(data);
-      console.log('carddata', data);
+      console.log('cardata', data);
       setLoading(false);
     };
     getData();
@@ -27,9 +28,10 @@ export default function UserCards() {
           </li>
         ))}
       </ul>
-      {/* <Route path="/:id">
+
+      <Route path="/cardView">
         <CardView cards={cards} />
-      </Route> */}
+      </Route>
     </>
   );
 }
