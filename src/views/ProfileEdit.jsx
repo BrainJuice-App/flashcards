@@ -40,13 +40,13 @@ export default function ProfileEdit() {
     toast.success('You have successfully updated your profile!');
   };
 
-  // useEffect(() => {
-  //   const fetchUrl = async () => {
-  //     const data = await fetchSignedUrl(avatarUrl);
-  //     setImageUrl(data.signedURL);
-  //   };
-  //   fetchUrl();
-  // }, [avatarUrl, setImageUrl]);
+  useEffect(() => {
+    const fetchUrl = async () => {
+      const data = await fetchSignedUrl(avatarUrl);
+      setImageUrl(data.signedURL);
+    };
+    fetchUrl();
+  }, [avatarUrl, setImageUrl]);
 
   return (
     <>
