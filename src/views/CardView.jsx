@@ -16,6 +16,9 @@ export default function CardView() {
   const handleEdit = () => {
     history.replace(`/profile/${id}/editCard`);
   };
+  const handleBack = () => {
+    history.replace(`/profile/`);
+  };
 
   useEffect(() => {
     try {
@@ -33,10 +36,11 @@ export default function CardView() {
   return (
     <div>
       <p>{error}</p>
-      <p key={card.id}>{card.name}</p>
-      <p key={card.id}>{card.content}</p>
+      <p>{card.name}</p>
+      <p>{card.content}</p>
       <button onClick={handleEdit}>edit card</button>
       <button onClick={handleDelete}>delete card</button>
+      <button onClick={handleBack}>Back to Profile</button>
     </div>
   );
 }
