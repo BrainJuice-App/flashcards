@@ -3,6 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { getCards } from '../services/cards';
 import CardView from '../views/CardView';
+import Card from './Card';
 
 export default function CardList() {
   const { cards, setCards, loading, setLoading } = useCard();
@@ -20,13 +21,11 @@ export default function CardList() {
 
   return (
     <>
-      <ul>
+      <div>
         {cards.map((card) => (
-          <li key={card.id}>
-            <Link to={`/${card.id}`}>{card.name}</Link>
-          </li>
+          <Card key={card.id} card={card} />
         ))}
-      </ul>
+      </div>
       {/* <Route path="/:id">
         <CardView cards={cards} />
       </Route> */}
