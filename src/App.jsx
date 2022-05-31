@@ -5,7 +5,6 @@ import { UserProvider } from './context/UserContext';
 import Auth from './views/Auth';
 import Header from './components/Header';
 import { Toaster } from 'react-hot-toast';
-import CardList from './components/CardList';
 import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
 import { ProfileProvider } from './context/ProfileContext';
@@ -15,7 +14,6 @@ import CardView from './views/CardView';
 import Home from './views/Home';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import CardEdit from './views/CardEdit';
 
 export default function App() {
   return (
