@@ -12,8 +12,9 @@ import { ProfileProvider } from './context/ProfileContext';
 import CreateCard from './views/CreateCard';
 import UserCards from './components/UserCards';
 import CardView from './views/CardView';
+import Home from './views/Home';
 
-// import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
       <div>
         <Toaster />
       </div>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <UserProvider>
         <ProfileProvider>
           <Header />
@@ -45,12 +46,12 @@ export default function App() {
               <CreateCard />
             </PrivateRoute>
             <PrivateRoute path="/">
-              <CardList />
+              <Home />
             </PrivateRoute>
           </Switch>
         </ProfileProvider>
       </UserProvider>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
     </>
   );
 }
