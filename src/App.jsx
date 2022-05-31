@@ -10,6 +10,7 @@ import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
 import { ProfileProvider } from './context/ProfileContext';
 import CreateCard from './views/CreateCard';
+import UserCards from './components/UserCards';
 
 // import CssBaseline from '@mui/material/CssBaseline';
 
@@ -27,6 +28,9 @@ export default function App() {
             <Route path="/auth">
               <Auth />
             </Route>
+            <PrivateRoute exact path="/userCards">
+              <UserCards />
+            </PrivateRoute>
             <PrivateRoute exact path="/profile">
               <Profile />
             </PrivateRoute>

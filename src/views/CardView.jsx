@@ -1,23 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCard } from '../context/cardsContext/cardsContext';
 
 export default function CardView({ cards = [] }) {
   console.log('cards', cards);
   const { id } = useParams();
-  const { handleDelete } = useCard();
-  const { card, setCard } = useCard();
+  const { card, setCard, error, setError } = useCard();
 
   useEffect(() => {
-    const selectedCard = cards.find((card) => card.id === Number(id));
-    setCard(selectedCard);
+    try {
+      const selectedCard = cards.find((card) => card.id === Number(id));
+      setCard(selectedCard);
+    } catch (error) {
+      setError('unable to display user cards');
+    }
   }, [id]);
   return (
     <div>
-      <h2>
-        <p>{card.content}</p>
-        <button onClick={handleDelete}>delete card</button>
-      </h2>
+      <p>{error}</p>
+
+      <p key={card.id}>{card.content}</p>
     </div>
   );
 }

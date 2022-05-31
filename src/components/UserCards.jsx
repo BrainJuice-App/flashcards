@@ -1,17 +1,16 @@
 import { useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { useCard } from '../context/cardsContext/cardsContext';
-import { getCards } from '../services/cards';
-import CardView from '../views/CardView';
+import { getProfileCards } from '../services/cards';
 
-export default function CardList() {
+export default function UserCards() {
   const { cards, setCards, loading, setLoading } = useCard();
 
   useEffect(() => {
     const getData = async () => {
-      const data = await getCards();
+      const data = await getProfileCards();
       setCards(data);
-      console.log('data', data);
+      console.log('carddata', data);
       setLoading(false);
     };
     getData();
@@ -20,6 +19,7 @@ export default function CardList() {
 
   return (
     <>
+      <h2> Cards Created by owner</h2>
       <ul>
         {cards.map((card) => (
           <li key={card.id}>
@@ -27,9 +27,9 @@ export default function CardList() {
           </li>
         ))}
       </ul>
-      <Route path="/:id">
+      {/* <Route path="/:id">
         <CardView cards={cards} />
-      </Route>
+      </Route> */}
     </>
   );
 }

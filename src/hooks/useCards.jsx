@@ -10,6 +10,7 @@ export function profileCards() {
 
   const cardsFilteredById = cards.filter((card) => card.id == user.id);
   return cardsFilteredById;
+  console.log('cardsFilteredById', cardsFilteredById);
 }
 
 export function homeCards() {

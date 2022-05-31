@@ -4,6 +4,8 @@ import { useProfileContext } from '../context/ProfileContext';
 import { useUser } from '../context/UserContext';
 import { getProfile } from '../services/profile';
 import { useEffect } from 'react';
+import UserCards from '../components/UserCards';
+import { Link } from '@mui/material';
 
 export default function Profile() {
   const history = useHistory();
@@ -26,6 +28,9 @@ export default function Profile() {
   };
   const redirectToCreateCard = () => {
     history.replace(`/createCard`);
+  };
+  const redirectToUserCards = () => {
+    history.push(`/userCards`);
   };
 
   useEffect(() => {
@@ -51,6 +56,9 @@ export default function Profile() {
       </div>
       <div>
         <h2>Your Personal Cards</h2>
+
+        <UserCards onClick={redirectToUserCards} />
+
         <button onClick={redirectToCreateCard}> Create Card</button>
       </div>
 
