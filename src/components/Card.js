@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Card.css';
 import '../components/Card.css';
 import './Card.css';
 
 export default function Card() {
+  const [isActive, setActive] = useState(false);
   return (
     <>
       <h2>Card</h2>
+
       <div className={styles.card}>
-        <div className={styles.card_inner}>
+        <div
+          className={isActive ? styles.card_inner : styles.card_inner.isFlipped}
+        >
           <div className={(styles.card_face, styles.card_faceFront)}>
-            <h2>Card Front</h2>
+            <button onClick={() => setActive(!isActive)}>
+              <h2>Card Front</h2>
+            </button>
           </div>
-          <div classNames={(styles.card_face, styles.card_faceBack)}>
+          <div className={(styles.card_face, styles.card_faceBack)}>
             <div className={styles.card_content}>
               <div className={styles.card_header}>
                 <img
