@@ -6,8 +6,12 @@ import { getProfile } from '../services/profile';
 import { useEffect } from 'react';
 import UserCards from '../components/UserCards';
 import { Link } from '@mui/material';
+import { getProfileCards } from '../services/cards';
+import { useCard } from '../context/cardsContext/cardsContext';
 
 export default function Profile() {
+  const { cards, setCards, loading, setLoading } = useCard();
+
   const history = useHistory();
   const { user } = useUser();
   const {
@@ -45,6 +49,15 @@ export default function Profile() {
     fetchProfile();
   }, []);
 
+  useEffect(() => {
+    const fetchProfileCards = async () => {
+      const data = await getProfileCards();
+      console.log(data);
+      setCards(data);
+    };
+    fetchProfileCards();
+  }, []);
+
   return (
     <>
       <div>
@@ -59,6 +72,14 @@ export default function Profile() {
       <div>
         <h2>Your Personal Cards</h2>
 
+        <ul>
+          {cards.map((card) => (
+            <li key={card.id}>
+              <Link to={`/${card.id}`}>{card.name}</Link>
+            </li>
+          ))}
+        </ul>
+
         {/* <UserCards /> */}
 
         <button onClick={redirectToCreateCard}> Create Card</button>
@@ -68,3 +89,5 @@ export default function Profile() {
     </>
   );
 }
+
+//profile cards to be fetched and rendered here, they link to profile/id page for editing...
