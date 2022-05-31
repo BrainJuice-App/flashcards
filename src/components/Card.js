@@ -28,7 +28,7 @@ export default function Card() {
               </div> */}
 
               <div className={styles.card_body}>
-                <h2>Answer</h2>
+                <h2 onClick={() => setActive(!isActive)}>Answer</h2>
               </div>
             </div>
           </div>
