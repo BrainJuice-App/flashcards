@@ -5,8 +5,9 @@ import { useUser } from '../context/UserContext';
 import { getProfile } from '../services/profile';
 import { useEffect } from 'react';
 import UserCards from '../components/UserCards';
-import { Link } from '@mui/material';
 import { getProfileCards } from '../services/cards';
+import { Link, Route } from 'react-router-dom';
+
 import { useCard } from '../context/cardsContext/cardsContext';
 
 export default function Profile() {
@@ -75,7 +76,7 @@ export default function Profile() {
         <ul>
           {cards.map((card) => (
             <li key={card.id}>
-              <Link to={`/${card.id}`}>{card.name}</Link>
+              <Link to={`/profile/${card.id}`}>{card.name}</Link>
             </li>
           ))}
         </ul>

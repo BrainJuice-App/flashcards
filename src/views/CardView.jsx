@@ -4,7 +4,6 @@ import { useCard } from '../context/cardsContext/cardsContext';
 import { deleteCard, getProfileCards, updateCards } from '../services/cards';
 
 export default function CardView() {
-  // console.log('cards', cards);
   const { id } = useParams();
   const { card, setCard, error, setError } = useCard();
 
@@ -33,8 +32,8 @@ export default function CardView() {
   return (
     <div>
       <p>{error}</p>
-      {/* <p key={card.id}>{card.name}</p>
-      <p key={card.id}>{card.content}</p> */}
+      <p key={card.id}>{card.name}</p>
+      <p key={card.id}>{card.content}</p>
       <button onClick={handleEdit}>edit card</button>
       <button onClick={handleDelete}>delete card</button>
     </div>
