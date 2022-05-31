@@ -29,7 +29,7 @@ export default function App() {
             <Route path="/auth">
               <Auth />
             </Route>
-            <PrivateRoute exact path="/:id/cardView">
+            <PrivateRoute exact path="/:id">
               <CardView />
             </PrivateRoute>
             <PrivateRoute exact path="/userCards">

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardList from '../components/CardList';
+import { useCard } from '../context/cardsContext/cardsContext';
 import { GiBrain } from 'react-icons/gi';
 
 export default function Home() {
+  const { cards } = useCard();
+  const [cardsState, setCardsState] = useState([]);
+  const [turns, setTurns] = useState(0);
+
   const shuffleCards = () => {
     const shuffledCards = [...cards]
       .sort(() => Math.random() - 0.5)
