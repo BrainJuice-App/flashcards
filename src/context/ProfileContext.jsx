@@ -10,8 +10,8 @@ const ProfileProvider = ({ children }) => {
   const [email, setEmail] = useState('');
   const [bio, setBio] = useState('');
   const [avatarUrl, setAvatarUrl] = useState(null);
-  const [avatar_Url, setAvatar_Url] = useState(null);
-  ///image///
+  const [imageUrl, setImageUrl] = useState(null);
+  // const [image, setImage] = useState(null);
 
   return (
     <ProfileContext.Provider
@@ -28,8 +28,10 @@ const ProfileProvider = ({ children }) => {
         setBio,
         avatarUrl,
         setAvatarUrl,
-        avatar_Url,
-        setAvatar_Url,
+        imageUrl,
+        setImageUrl,
+        image,
+        setImage,
       }}
     >
       {children}

@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfileForm from '../components/ProfileForm';
-import { updateProfile } from '../services/profile';
+import { updateProfile, fetchSignedUrl } from '../services/profile';
+import { useEffect } from 'react';
 
 import { useUser } from '../context/UserContext';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -10,8 +11,16 @@ import { useProfileContext } from '../context/ProfileContext';
 // import Upload from '../components/Upload';
 
 export default function ProfileEdit() {
-  const { firstName, lastName, username, bio, avatarUrl, setAvatarUrl } =
-    useProfileContext();
+  const {
+    firstName,
+    lastName,
+    username,
+    bio,
+    avatarUrl,
+    setAvatarUrl,
+    setImageUrl,
+    imageUrl,
+  } = useProfileContext();
   const { user } = useUser();
   const history = useHistory();
 
@@ -24,11 +33,21 @@ export default function ProfileEdit() {
       last_name: lastName,
       username: username,
       bio: bio,
+      image: imageUrl,
     };
+    console.log(updates);
     await updateProfile(updates);
     history.push('/profile');
     toast.success('You have successfully updated your profile!');
   };
+
+  useEffect(() => {
+    const fetchUrl = async () => {
+      const data = await fetchSignedUrl(avatarUrl);
+      setImageUrl(data.signedURL);
+    };
+    fetchUrl();
+  }, [avatarUrl, setImageUrl]);
 
   return (
     <>

@@ -3,7 +3,7 @@ import { client } from '../services/client';
 import { useProfileContext } from '../context/ProfileContext';
 import { useState } from 'react';
 
-export default function Upload({ url, sizeW, sizeH, onUpload }) {
+export default function Upload({ url, onUpload }) {
   const { avatarUrl, setAvatarUrl } = useProfileContext();
   const [uploading, setUploading] = useState(false);
 
@@ -40,7 +40,7 @@ export default function Upload({ url, sizeW, sizeH, onUpload }) {
       const filePath = `${fileName}`;
 
       let { error: uploadError } = await client.storage
-        .from('mybucket')
+        .from('profilebucket')
         .upload(filePath, file);
 
       if (uploadError) {
@@ -59,12 +59,10 @@ export default function Upload({ url, sizeW, sizeH, onUpload }) {
     <div>
       {avatarUrl && (
         <img
-          src={
-            avatarUrl ? avatarUrl : `https://place-hold.it/${sizeW}x${sizeH}`
-          }
+          src={avatarUrl ? avatarUrl : `https://place-hold.it`}
           alt={avatarUrl ? 'image' : 'No image'}
           className="avatar image"
-          style={{ height: sizeH, width: sizeW }}
+          style={{ height: '150px' }}
         />
       )}
       {uploading ? (
