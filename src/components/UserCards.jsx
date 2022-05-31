@@ -24,7 +24,7 @@ export default function UserCards() {
       <ul>
         {cards.map((card) => (
           <li key={card.id}>
-            <Link to={`/${card.id}`}>{card.name}</Link>
+            <Link to={`/${card.id}/cardView`}>{card.name}</Link>
           </li>
         ))}
       </ul>

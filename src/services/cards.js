@@ -1,10 +1,15 @@
+import { useUser } from '../context/UserContext';
 import { checkError, client } from './client';
 import { getUser } from './user';
 
 export async function getCards() {
+  console.log(getUser());
   const resp = await client.from('cards').select('*');
-  console.log('resp', resp);
-  return checkError(resp);
+  const cards = checkError(resp);
+  const cardsFilteredByIdAndNull = cards.filter(
+    (card) => card.creator == getUser().id || card.creator == null
+  );
+  return cardsFilteredByIdAndNull;
 }
 
 export async function createCard(card) {

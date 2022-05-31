@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from 'react';
 export const CardContext = createContext();
 
 export const CardProvider = ({ children }) => {
-  const [cards, setCards] = useState({});
+  const [cards, setCards] = useState([]);
   const [name, setName] = useState('');
   const [creator, setCreator] = useState('');
   const [content, setContent] = useState('');
