@@ -14,22 +14,21 @@ export default function Card() {
           className={isActive ? styles.card_inner : styles.card_inner.isFlipped}
         >
           <div className={(styles.card_face, styles.card_faceFront)}>
-            <button onClick={() => setActive(!isActive)}>
-              <h2>Card Front</h2>
-            </button>
+            <h2 onClick={() => setActive(!isActive)}>Question</h2>
           </div>
           <div className={(styles.card_face, styles.card_faceBack)}>
             <div className={styles.card_content}>
-              <div className={styles.card_header}>
+              {/* <div className={styles.card_header}>
                 <img
                   src="../../public/card.jpeg"
                   alt=""
                   className={styles.pp}
                 />
                 <h2>Question</h2>
-              </div>
+              </div> */}
+
               <div className={styles.card_body}>
-                <h3>Answer</h3>
+                <h2>Answer</h2>
               </div>
             </div>
           </div>
