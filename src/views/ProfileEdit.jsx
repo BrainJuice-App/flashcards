@@ -8,7 +8,6 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { toast } from 'react-hot-toast';
 import Upload from '../components/Upload';
 import { useProfileContext } from '../context/ProfileContext';
-// import Upload from '../components/Upload';
 
 export default function ProfileEdit() {
   const {
@@ -41,13 +40,13 @@ export default function ProfileEdit() {
     toast.success('You have successfully updated your profile!');
   };
 
-  useEffect(() => {
-    const fetchUrl = async () => {
-      const data = await fetchSignedUrl(avatarUrl);
-      setImageUrl(data.signedURL);
-    };
-    fetchUrl();
-  }, [avatarUrl, setImageUrl]);
+  // useEffect(() => {
+  //   const fetchUrl = async () => {
+  //     const data = await fetchSignedUrl(avatarUrl);
+  //     setImageUrl(data.signedURL);
+  //   };
+  //   fetchUrl();
+  // }, [avatarUrl, setImageUrl]);
 
   return (
     <>

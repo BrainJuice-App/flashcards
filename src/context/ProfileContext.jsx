@@ -11,7 +11,7 @@ const ProfileProvider = ({ children }) => {
   const [bio, setBio] = useState('');
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
-  // const [image, setImage] = useState(null);
+  const [image, setImage] = useState('');
 
   return (
     <ProfileContext.Provider
