@@ -15,6 +15,7 @@ import Home from './views/Home';
 
 import CssBaseline from '@mui/material/CssBaseline';
 import Card from './components/Card';
+import EditCard from './views/EditCard';
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
             <Route path="/auth">
               <Auth />
             </Route>
-            <PrivateRoute exact path="/cardView">
+            <PrivateRoute exact path="/profile/:id">
               <CardView />
             </PrivateRoute>
             <PrivateRoute exact path="/userCards">
@@ -44,6 +45,9 @@ export default function App() {
             </PrivateRoute>
             <PrivateRoute exact path="/createCard">
               <CreateCard />
+            </PrivateRoute>
+            <PrivateRoute exact path="/profile/:id/editCard">
+              <EditCard />
             </PrivateRoute>
             <Route exact path="/test">
               <Card />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { GiBrain } from 'react-icons/gi';
 import { useCard } from '../context/cardsContext/cardsContext';
@@ -15,11 +15,29 @@ import {
   TextField,
   Grid,
 } from '@mui/material';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { getProfileCards } from '../services/cards';
 
 const theme = createTheme();
 
 export default function CardForm({ submitCreateHandler }) {
+  //we will nneed params id, but !id... if id, fetch card by id, setname/setContent to the data we get from the fetch call...
   const { name, content, creator, setName, setContent, setCreator } = useCard();
+
+  const { id } = useParams();
+
+  if (id) {
+    useEffect(() => {
+      const getData = async () => {
+        const cards = await getProfileCards();
+        const selectedCard = cards.find((card) => card.id === Number(id));
+        console.log(selectedCard);
+        setContent(selectedCard.content);
+        setName(selectedCard.name);
+      };
+      getData();
+    }, []);
+  }
 
   return (
     <ThemeProvider theme={theme}>
