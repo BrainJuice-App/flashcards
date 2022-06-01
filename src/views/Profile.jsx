@@ -25,8 +25,7 @@ export default function Profile() {
     setUsername,
     bio,
     setBio,
-    setAvatarUrl,
-    imageUrl,
+
     image,
     setImage,
   } = useProfileContext();
@@ -46,7 +45,7 @@ export default function Profile() {
       setLastName(data.last_name);
       setUsername(data.username);
       setBio(data.bio);
-      setAvatarUrl(data.image);
+      setImage(data.image);
     };
     fetchProfile();
   }, []);
@@ -67,7 +66,7 @@ export default function Profile() {
           {firstName} {lastName}
         </h3>
         <p>{bio}</p>
-        <img src={imageUrl} height="150" />
+        <img src={image} height="150" />
         {/* /// removes image on refresh, needs to be changed to image// */}
       </div>
       <div>
