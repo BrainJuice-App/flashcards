@@ -2,6 +2,7 @@
   background-image: url('../assets/brain.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 header {
   background-color: black;
