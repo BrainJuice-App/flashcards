@@ -6,14 +6,16 @@ import CardView from '../views/CardView';
 import Card from './Card';
 import styles from '../components/CardList.css';
 
-export default function CardList() {
+export default function CardList({ newCards }) {
   const { cards, setCards, loading, setLoading } = useCard();
+
+  let content = newCards.length ? newCards : cards;
 
   useEffect(() => {
     const getData = async () => {
       const data = await getCards();
       setCards(data);
-      console.log('data', data);
+      // console.log('data', data);
       setLoading(false);
     };
     getData();
@@ -23,7 +25,7 @@ export default function CardList() {
   return (
     <>
       <div className={styles.cardList}>
-        {cards.map((card) => (
+        {content.map((card) => (
           <Card key={card.id} card={card} />
         ))}
       </div>

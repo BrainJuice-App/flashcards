@@ -5,17 +5,18 @@ import { Button } from '@mui/material';
 
 export default function Home() {
   const { cards, setCards } = useCard();
-  const [turns, setTurns] = useState(0);
+  const [newCards, setNewCards] = useState([]);
+  console.log(newCards);
 
   const shuffleCards = () => {
-    const shuffledCards = [...cards]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
-
-    setCards(shuffledCards);
-    setTurns(0);
-    console.log(shuffledCards);
-    // return array[shuffledCards];
+    const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
+    // .map((card) => ({ ...card, id: Math.random() }));
+    let hand = [];
+    for (let i = 0; i < 8; i++) {
+      hand.push(shuffledCards[i]);
+    }
+    console.log(hand);
+    setNewCards(hand);
   };
 
   return (
@@ -32,7 +33,7 @@ export default function Home() {
       >
         Shuffle
       </Button>
-      <CardList />
+      <CardList newCards={newCards} />
       <h3></h3>
     </div>
   );
