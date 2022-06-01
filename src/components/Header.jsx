@@ -2,6 +2,8 @@ import { React } from 'react';
 import { useUser } from '../context/UserContext';
 import { useHistory, Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import styles from './Header.css';
+import { GiBrain } from 'react-icons/gi';
 
 export default function Header() {
   const { user, logout } = useUser();
@@ -26,9 +28,24 @@ export default function Header() {
 
   return (
     <>
-      <div>
-        <h1>BrainJuice</h1>
+      <div className={styles.header}>
+        <h1>
+          BrainJuice <GiBrain size={42} />
+        </h1>
+
         <div>
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+              margin: '5px',
+            }}
+            onClick={handleHomeButton}
+          >
+            Home
+          </Button>
           <Button
             variant="outlined"
             sx={{
@@ -39,6 +56,18 @@ export default function Header() {
             onClick={redirectToProfile}
           >
             Profile
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+              margin: '5px',
+            }}
+            onClick={redirectToCreateCard}
+          >
+            Create Card
           </Button>
           {user ? (
             <Button
@@ -67,33 +96,8 @@ export default function Header() {
               Signin/Signup Button
             </Button>
           )}
-          <Button
-            variant="outlined"
-            sx={{
-              color: 'red',
-              backgroundColor: '#1826d2',
-              borderColor: 'green',
-              margin: '5px',
-            }}
-            onClick={handleHomeButton}
-          >
-            Home
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              color: 'red',
-              backgroundColor: '#1826d2',
-              borderColor: 'green',
-              margin: '5px',
-            }}
-            onClick={redirectToCreateCard}
-          >
-            Create Card
-          </Button>
         </div>
       </div>
-      <hr />
     </>
   );
 }

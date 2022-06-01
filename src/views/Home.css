@@ -1,0 +1,11 @@
+.home {
+  background-image: url('../assets/brain.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+header {
+  background-color: black;
+}

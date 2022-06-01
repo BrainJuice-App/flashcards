@@ -29,7 +29,7 @@
 /* question */
 .card_faceFront {
   /* background-image: url('../assets/brain.jpeg'); */
-  background-color: black;
+  background-color: var(--primary);
   background-size: 500px;
   background-repeat: no-repeat;
 
@@ -52,7 +52,7 @@
 
 /* answer */
 .card_faceBack {
-  background-color: #1826d2;
+  background-color: var(--primary);
   transform: rotateY(90deg);
   width: 100%;
   height: 100%;
