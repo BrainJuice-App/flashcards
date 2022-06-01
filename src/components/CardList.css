@@ -1,11 +1,7 @@
 .cardList {
-  background-image: url('../assets/brain.jpeg');
-  background-size: 100%;
-  background-repeat: no-repeat;
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
-  /* margin: 35px;
   justify-content: space-between space-around;
-  padding: 100px; */
+  padding: 100px;
 }
