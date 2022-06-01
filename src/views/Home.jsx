@@ -7,7 +7,7 @@ export default function Home() {
   const { cards, setCards } = useCard();
   const [turns, setTurns] = useState(0);
 
-  const shuffleCards = () => {
+  const shuffleCards = (array) => {
     const shuffledCards = [...cards]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
@@ -15,6 +15,7 @@ export default function Home() {
     setCards(shuffledCards);
     setTurns(0);
     console.log(shuffledCards);
+    return array[shuffledCards];
   };
 
   return (
