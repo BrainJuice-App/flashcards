@@ -15,7 +15,7 @@ export default function Card({ card }) {
   const [isActive, setActive] = useState(false);
   return (
     <>
-      <div className={styles.card}>
+      <div className={styles.card} placeholder="questionCards">
         <div
           className={isActive ? styles.card_inner : styles.card_inner.isFlipped}
         >
