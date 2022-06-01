@@ -16,14 +16,15 @@ import Home from './views/Home';
 import CssBaseline from '@mui/material/CssBaseline';
 import Card from './components/Card';
 import EditCard from './views/EditCard';
+import styles from './App.css';
 
 export default function App() {
   return (
-    <>
+    <div className={styles.app}>
       <div>
         <Toaster />
       </div>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <UserProvider>
         <ProfileProvider>
           <Header />
@@ -58,7 +59,7 @@ export default function App() {
           </Switch>
         </ProfileProvider>
       </UserProvider>
-      <CssBaseline />
-    </>
+      {/* <CssBaseline /> */}
+    </div>
   );
 }

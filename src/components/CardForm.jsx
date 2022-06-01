@@ -51,8 +51,8 @@ export default function CardForm({ submitCreateHandler }) {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <GiBrain />
+          <Avatar sx={{ m: 2, bgcolor: '#1826d2' }}>
+            <GiBrain size={42} />
           </Avatar>
 
           <Typography component="h1" variant="h5"></Typography>

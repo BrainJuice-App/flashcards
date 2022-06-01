@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CardList from '../components/CardList';
 import { useCard } from '../context/cardsContext/cardsContext';
-import { GiBrain } from 'react-icons/gi';
+import { Button } from '@mui/material';
 
 export default function Home() {
   const { cards, setCards } = useCard();
@@ -20,12 +20,20 @@ export default function Home() {
 
   return (
     <div>
-      Home
-      <button onClick={shuffleCards}>Shuffle</button>
+      <Button
+        variant="outlined"
+        sx={{
+          color: 'red',
+          backgroundColor: '#1826d2',
+          borderColor: 'green',
+          margin: '5px',
+        }}
+        onClick={shuffleCards}
+      >
+        Shuffle
+      </Button>
       <CardList />
-      <h3>
-        <GiBrain />
-      </h3>
+      <h3></h3>
     </div>
   );
 }

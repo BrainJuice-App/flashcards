@@ -4,6 +4,7 @@ import { useCard } from '../context/cardsContext/cardsContext';
 import { getCards } from '../services/cards';
 import CardView from '../views/CardView';
 import Card from './Card';
+import styles from '../components/CardList.css';
 
 export default function CardList() {
   const { cards, setCards, loading, setLoading } = useCard();
@@ -21,7 +22,7 @@ export default function CardList() {
 
   return (
     <>
-      <div>
+      <div className={styles.cardList}>
         {cards.map((card) => (
           <Card key={card.id} card={card} />
         ))}

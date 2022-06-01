@@ -1,6 +1,7 @@
 import { React } from 'react';
 import { useUser } from '../context/UserContext';
 import { useHistory, Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 export default function Header() {
   const { user, logout } = useUser();
@@ -26,18 +27,70 @@ export default function Header() {
   return (
     <>
       <div>
-        <h1>Header for our APP</h1>
+        <h1>BrainJuice</h1>
         <div>
-          <button onClick={redirectToProfile}>Profile</button>
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+            }}
+            onClick={redirectToProfile}
+          >
+            Profile
+          </Button>
           {user ? (
-            <button onClick={() => handleLogout()}>Logout Button</button>
+            <Button
+              variant="outlined"
+              sx={{
+                color: 'red',
+                backgroundColor: '#1826d2',
+                borderColor: 'green',
+                margin: '5px',
+              }}
+              onClick={() => handleLogout()}
+            >
+              Logout Button
+            </Button>
           ) : (
-            <button onClick={() => handleRedirect()}>
+            <Button
+              variant="outlined"
+              sx={{
+                color: 'red',
+                backgroundColor: '#1826d2',
+                borderColor: 'green',
+                margin: '5px',
+              }}
+              onClick={() => handleRedirect()}
+            >
               Signin/Signup Button
-            </button>
+            </Button>
           )}
-          <button onClick={handleHomeButton}>Home</button>
-          <button onClick={redirectToCreateCard}> Create Card</button>
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+              margin: '5px',
+            }}
+            onClick={handleHomeButton}
+          >
+            Home
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+              margin: '5px',
+            }}
+            onClick={redirectToCreateCard}
+          >
+            Create Card
+          </Button>
         </div>
       </div>
       <hr />

@@ -6,7 +6,7 @@
 .card {
   margin: 100px auto 0;
   width: 400px;
-  height: 400px;
+  height: 250px;
   perspective: 1000px;
   position: relative;
   border-radius: 8px;
@@ -28,7 +28,11 @@
 
 /* question */
 .card_faceFront {
-  background-color: #ff6b35;
+  /* background-image: url('../assets/brain.jpeg'); */
+  background-color: black;
+  background-size: 500px;
+  background-repeat: no-repeat;
+
   transform: rotateY(0deg);
   width: 100%;
   height: 100%;
@@ -37,16 +41,18 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  border: solid 5px #bcfdd4;
 }
 
 .card_faceFront h2 {
-  color: black;
+  font-family: 'Spline Sans Mono', monospace;
+  color: #1826d2;
   font-size: 32px;
 }
 
 /* answer */
 .card_faceBack {
-  background-color: purple;
+  background-color: #1826d2;
   transform: rotateY(90deg);
   width: 100%;
   height: 100%;
@@ -54,10 +60,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  border: solid 5px #bcfdd4;
 }
 
 .card_faceBack h2 {
-  color: white;
+  font-family: 'Spline Sans Mono', monospace;
+  color: red;
   font-size: 32px;
   align-items: center;
   justify-content: center;
