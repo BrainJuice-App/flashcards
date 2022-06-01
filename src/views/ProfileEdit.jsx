@@ -24,6 +24,7 @@ export default function ProfileEdit() {
   const history = useHistory();
 
   const submitProfileHandler = async (e) => {
+    console.log('profile edit button pushed');
     e.preventDefault;
 
     const updates = {
@@ -35,8 +36,8 @@ export default function ProfileEdit() {
       image: imageUrl,
     };
     console.log(updates);
-    await updateProfile(updates);
-    history.push('/profile');
+    const data = await updateProfile(updates);
+    history.replace('/profile');
     toast.success('You have successfully updated your profile!');
   };
 

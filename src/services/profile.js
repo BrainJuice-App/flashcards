@@ -1,11 +1,8 @@
 import { checkError, client } from './client';
 
 export async function getProfile(id) {
-  const resp = await client
-    .from('profile')
-    .select('*')
-    .match({ id: id })
-    .single();
+  const resp = await client.from('profile').select('*').match({ id }).single();
+  console.log('fetch resp', resp);
   return checkError(resp);
 }
 
@@ -16,7 +13,6 @@ export async function createProfile(id) {
 }
 
 export async function updateProfile(profile) {
-  console.log(profile);
   const resp = await client
     .from('profile')
     .update({
@@ -28,6 +24,7 @@ export async function updateProfile(profile) {
       image: profile.image,
     })
     .match({ id: profile.id });
+  console.log('resp', resp);
 
   return checkError(resp);
 }

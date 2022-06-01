@@ -15,6 +15,7 @@ export default function Profile() {
 
   const history = useHistory();
   const { user } = useUser();
+  // console.log('user.id', user.id);  returns mathching id
   const {
     firstName,
     setFirstName,
@@ -40,7 +41,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       const data = await getProfile(user.id);
-      console.log(data);
+      // console.log(data); returns null
       setFirstName(data.first_name);
       setLastName(data.last_name);
       setUsername(data.username);
@@ -53,7 +54,6 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfileCards = async () => {
       const data = await getProfileCards();
-      console.log(data);
       setCards(data);
     };
     fetchProfileCards();
