@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CardList from '../components/CardList';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { Button } from '@mui/material';
+import styles from './Home.css';
 
 export default function Home() {
   const { cards, setCards } = useCard();
@@ -20,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className={styles.home}>
       <Button
         variant="outlined"
         sx={{

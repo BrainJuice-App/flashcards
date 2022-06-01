@@ -1,0 +1,8 @@
+.home {
+  background-image: url('../assets/brain.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header {
+  background-color: black;
+}

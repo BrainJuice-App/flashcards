@@ -1,3 +1,8 @@
+:root {
+  --primary: black;
+  --secondary: blue;
+}
+
 .app {
   font-family: 'Spline Sans Mono', monospace;
   /* background-color: black; */
