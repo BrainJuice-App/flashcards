@@ -23,6 +23,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Button
+        className={styles.shuffle}
         variant="outlined"
         sx={{
           color: 'red',
