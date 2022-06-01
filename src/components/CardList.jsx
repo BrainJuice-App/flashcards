@@ -14,7 +14,7 @@ export default function CardList({ newCards }) {
   useEffect(() => {
     const getData = async () => {
       const data = await getCards();
-      setCards(data);
+      setCards(data); //slice here???
       // console.log('data', data);
       setLoading(false);
     };
@@ -25,7 +25,7 @@ export default function CardList({ newCards }) {
   return (
     <>
       <div className={styles.cardList}>
-        {content.map((card) => (
+        {content.slice(0, 8).map((card) => (
           <Card key={card.id} card={card} />
         ))}
       </div>
