@@ -4,7 +4,7 @@ import { getUser } from './user';
 
 export async function getCards() {
   console.log(getUser());
-  const resp = await client.from('cards').select('*').range(0, 10);
+  const resp = await client.from('cards').select('*');
   const cards = checkError(resp);
   const cardsFilteredByIdAndNull = cards.filter(
     (card) => card.creator == getUser().id || card.creator == null
