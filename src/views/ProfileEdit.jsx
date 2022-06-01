@@ -35,8 +35,7 @@ export default function ProfileEdit() {
       bio: bio,
       image: imageUrl,
     };
-    console.log(updates);
-    const data = await updateProfile(updates);
+    await updateProfile(updates);
     history.replace('/profile');
     toast.success('You have successfully updated your profile!');
   };

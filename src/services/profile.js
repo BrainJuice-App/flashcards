@@ -2,7 +2,6 @@ import { checkError, client } from './client';
 
 export async function getProfile(id) {
   const resp = await client.from('profile').select('*').match({ id }).single();
-  console.log('fetch resp', resp);
   return checkError(resp);
 }
 
