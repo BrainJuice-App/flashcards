@@ -72,13 +72,13 @@ export default function Profile() {
       <div>
         <h2>Your Personal Cards</h2>
 
-        <ul>
+        <div>
           {cards.map((card) => (
-            <li key={card.id}>
+            <div key={card.id}>
               <Link to={`/profile/${card.id}`}>{card.name}</Link>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
 
         {/* <UserCards /> */}
 

@@ -11,7 +11,7 @@ export default function Home() {
 
   const shuffleCards = () => {
     const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
-    // .map((card) => ({ ...card, id: Math.random() }));
+
     let hand = [];
     for (let i = 0; i < 8; i++) {
       hand.push(shuffledCards[i]);
@@ -28,7 +28,12 @@ export default function Home() {
           color: 'red',
           backgroundColor: '#1826d2',
           borderColor: 'green',
-          margin: '5px',
+          marginLeft: '35px',
+
+          // maxWidth: '500px',
+          // maxHeight: '100px',
+          // minWidth: '500px',
+          // minHeight: '100px',
         }}
         onClick={shuffleCards}
       >

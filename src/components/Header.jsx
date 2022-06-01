@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { useUser } from '../context/UserContext';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Button } from '@mui/material';
 import styles from './Header.css';
 import { GiBrain } from 'react-icons/gi';
@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <>
       <div className={styles.header}>
-        <h1>
+        <h1 style={{ marginLeft: '35px' }}>
           BrainJuice <GiBrain size={42} />
         </h1>
 
@@ -41,6 +41,7 @@ export default function Header() {
               backgroundColor: '#1826d2',
               borderColor: 'green',
               margin: '5px',
+              marginLeft: '35px',
             }}
             onClick={handleHomeButton}
           >
