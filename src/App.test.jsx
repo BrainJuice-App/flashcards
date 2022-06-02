@@ -1,9 +1,14 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { setupServer } from 'msw/node';
 import { rest } from 'msw';
 
 import App from './App';
+import { mockProfile, mockUser } from './utils/data';
+import { UserProvider } from './context/UserContext';
+import { ProfileProvider } from './context/ProfileContext';
+import { CardProvider } from './context/cardsContext/cardsContext';
 
 const results = [
   {
@@ -73,9 +78,39 @@ const results = [
 ];
 
 const server = setupServer(
-  rest.get(`https://brkitplnwnixzvunfbfa.supabase.co/`, (req, res, ctx) => {
-    res(ctx.json(results));
-  })
+  rest.post(
+    `https://brkitplnwnixzvunfbfa.supabase.co/auth/v1/signup`,
+    (req, res, ctx) => {
+      return res(ctx.json(mockUser));
+    }
+  ),
+  // rest.options(
+  //   `https://brkitplnwnixzvunfbfa.supabase.co/auth/v1/signup`,
+  //   (req, res, ctx) => {
+  //     return res(ctx.json(mockUser));
+  //   }
+  // ),
+  rest.post(
+    `https://brkitplnwnixzvunfbfa.supabase.co/rest/v1/profile`,
+    (req, res, ctx) => {
+      return res(ctx.json(mockProfile));
+    }
+  ),
+  // rest.options(
+  //   `https://brkitplnwnixzvunfbfa.supabase.co/rest/v1/profile`,
+  //   (req, res, ctx) => {
+  //     return res(ctx.json(mockProfile));
+  //   }
+  // ),
+  rest.get(
+    `https://brkitplnwnixzvunfbfa.supabase.co/rest/v1/cards`,
+    (req, res, ctx) => {
+      return res(ctx.json(results));
+    }
+  )
+  // rest.get(`https://brkitplnwnixzvunfbfa.supabase.co/`, (req, res, ctx) => {
+  //   res(ctx.json(results));
+  // })
 );
 
 beforeAll(() => server.listen());
@@ -84,28 +119,43 @@ afterAll(() => server.close());
 
 describe('App', () => {
   it('Should render list of 8 cards', async () => {
-    server.use(
-      rest.get(
-        `https://brkitplnwnixzvunfbfa.supabase.co/rest/v1/cards?select=*`,
-        (req, res, ctx) => {
-          return res(ctx.json([results]));
-        }
-      )
-    );
-
-    render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+    // server.use();
+    const app = render(
+      <CardProvider>
+        <UserProvider>
+          <ProfileProvider>
+            <MemoryRouter>
+              <App />
+            </MemoryRouter>
+          </ProfileProvider>
+        </UserProvider>
+      </CardProvider>
     );
     const BrainJuice = await screen.findByText('BrainJuice');
 
     expect(BrainJuice).toBeInTheDocument();
 
-    // await screen.findByText(/loading/i);
-
-    const question = await screen.findByRole('heading', { name: /question/i });
+    const signup = await screen.findByText(/sign up/i);
+    userEvent.click(signup);
+    // const email = screen.getByRole('textbox', { name: /email address/i });
+    // const password = screen.getByPlaceholderText('password');
+    // userEvent.type(email, 'test@user.com');
+    // userEvent.type(password, 'password');
+    const button = screen.getByRole('button', { name: /sign up/i });
+    expect(app).toMatchSnapshot();
     screen.debug();
+    // userEvent.click(button);
+
+    // const welcome = screen.getByText(/welcome test@user.com/i);
+    // expect(welcome).toBeInTheDocument();
+
+    // const question = await screen.findByRole(
+    //   'heading',
+    //   { name: /question/i },
+    //   { timeout: 4000 }
+    // );
+    // // const loading = await screen.findByText(/loading/i);
+
     // expect(question).toBeInTheDocument();
   });
 });
