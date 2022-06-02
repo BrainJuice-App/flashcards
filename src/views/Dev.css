@@ -27,3 +27,9 @@
   margin: 20px auto;
   width: 180px;
 }
+.footer {
+  background-color: black;
+  height: 100px;
+
+  padding: 20px;
+}
