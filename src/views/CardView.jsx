@@ -15,6 +15,7 @@ export default function CardView() {
   const handleDelete = async (e) => {
     const removeCard = await deleteCard(id);
     setCard(removeCard);
+    history.replace(`/profile/`);
   };
   const handleEdit = () => {
     history.replace(`/profile/${id}/editCard`);

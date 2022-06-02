@@ -7,7 +7,6 @@ import styles from './Home.css';
 export default function Home() {
   const { cards, setCards } = useCard();
   const [newCards, setNewCards] = useState([]);
-  console.log(newCards);
 
   const shuffleCards = () => {
     const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
@@ -16,7 +15,6 @@ export default function Home() {
     for (let i = 0; i < 8; i++) {
       hand.push(shuffledCards[i]);
     }
-    console.log(hand);
     setNewCards(hand);
   };
 
@@ -41,7 +39,6 @@ export default function Home() {
         Shuffle
       </Button>
       <CardList newCards={newCards} />
-      <h3></h3>
     </div>
   );
 }

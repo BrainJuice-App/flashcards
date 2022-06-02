@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useProfileContext } from '../context/ProfileContext';
 import { useUser } from '../context/UserContext';
 import { getProfile } from '../services/profile';
 import { useEffect } from 'react';
 import { getProfileCards } from '../services/cards';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Profile.css';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { Button } from '@mui/material';
 
 export default function Profile() {
-  const { cards, setCards, loading, setLoading } = useCard();
-
+  const { cards, setCards } = useCard();
   const history = useHistory();
   const { user } = useUser();
- 
   const {
     firstName,
     setFirstName,
@@ -25,10 +23,10 @@ export default function Profile() {
     setUsername,
     bio,
     setBio,
-
     image,
     setImage,
   } = useProfileContext();
+  const [loading, setLoading] = useState(true);
 
   const handleEditButtonClick = () => {
     history.push(`/profile/${user.id}/edit`);
@@ -40,24 +38,19 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       const data = await getProfile(user.id);
-      // console.log(data); returns null
+      const userCards = await getProfileCards();
       setFirstName(data.first_name);
       setLastName(data.last_name);
       setUsername(data.username);
       setBio(data.bio);
       setImage(data.image);
+      setCards(userCards);
+      setLoading(false);
     };
     fetchProfile();
   }, []);
 
-  useEffect(() => {
-    const fetchProfileCards = async () => {
-      const data = await getProfileCards();
-      setCards(data);
-    };
-    fetchProfileCards();
-  }, []);
-
+  if (loading) return <p>loading</p>;
   return (
     <div className={styles.profile}>
       <div>
@@ -67,7 +60,6 @@ export default function Profile() {
         </h3>
         <p>{bio}</p>
         <img src={image} height="150" />
-      
       </div>
       <div>
         <h2>Your Personal Cards</h2>
@@ -81,7 +73,6 @@ export default function Profile() {
             </div>
           ))}
         </div>
-
 
         <Button
           sx={{
