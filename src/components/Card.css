@@ -32,9 +32,9 @@
     #fd1892 100%
   );
   border-image-slice: 1;
-  height: 200px;
+  height: 250px;
   margin: 20px auto;
-  width: 200px;
+  width: 250px;
 }
 
 .card_inner {
@@ -69,6 +69,7 @@
   font-family: 'Spline Sans Mono', monospace;
   color: #1826d2;
   font-size: 20px;
+  text-shadow: 2px #1826d2;
 }
 
 /* answer */
@@ -86,8 +87,6 @@
 .card_faceBack h2 {
   font-family: 'Spline Sans Mono', monospace;
   color: red;
-
-  /* padding-top: 25px; */
   text-align: center;
   font-size: 20px;
   align-items: center;
