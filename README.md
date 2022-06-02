@@ -1,4 +1,4 @@
-### About BrainJuice###
+### About BrainJuice ###
 
 ### What is BrainJuice? ###
 
