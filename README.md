@@ -33,7 +33,8 @@ BrainJuice is a JavaScript study tool that allows users to study using a classic
 
 ### Deployed Site ###
 
-![Alt text](src/assets/BrainJuice.png)
+![brainJuice_screenshot](./assets/BrainJuice.png)
+![mark-it team logo](./assets/MARKit_Logo.png);
 
 
 
