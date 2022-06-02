@@ -14,7 +14,7 @@ export default function Dev() {
         <br />
         <br />
         <h2>Kamie</h2>
-        <p>Full Stack Software Engineer and I enjoy coding.</p>
+        <p>Full Stack Software Engineer and I enjoy gardening and learning.</p>
         <div className={styles.imgBorder}>
           <a href="https://www.linkedin.com/in/kamieshort/">
             <img
@@ -32,7 +32,7 @@ export default function Dev() {
       <br />
       <div>
         <h2>Yovana</h2>
-        <p>Full Stack Software Engineer and I enjoy coding.</p>
+        <p>Full Stack Software Engineer and I love kayaking and coding! .</p>
         <div className={styles.imgBorder}>
           <a href="https://www.linkedin.com/in/yovana-pelayo/">
             <img
@@ -51,7 +51,7 @@ export default function Dev() {
       <br />
       <div>
         <h2>Alex</h2>
-        <p>Full Stack Software Engineer and I enjoy gardening and learning.</p>
+        <p>Full Stack Software Engineer and I enjoy music and laughter.</p>
         <div className={styles.imgBorder}>
           <a href="https://www.linkedin.com/in/alexorlet89/">
             <img
