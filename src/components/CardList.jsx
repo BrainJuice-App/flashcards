@@ -21,12 +21,13 @@ export default function CardList({ newCards }) {
     getData();
   }, []);
   if (loading) return <div>loading</div>;
+  console.log(cards);
 
   return (
     <>
       <div className={styles.cardList}>
         {content.slice(0, 8).map((card) => (
-          <Card key={card.id} card={card} />
+          <Card placeholder="card" key={card.id} card={card} />
         ))}
       </div>
       {/* <Route path="/:id">
