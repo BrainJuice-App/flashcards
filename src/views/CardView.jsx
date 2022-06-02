@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { deleteCard, getProfileCards, updateCards } from '../services/cards';
-
+import styles from './CardView.css';
 export default function CardView() {
+  const [isActive, setActive] = useState(false);
   const { id } = useParams();
   const { card, setCard, error, setError } = useCard();
   const history = useHistory();
@@ -35,12 +36,27 @@ export default function CardView() {
   }, [id]);
   return (
     <div>
-      <p>{error}</p>
-      <p>{card.name}</p>
-      <p>{card.content}</p>
-      <button onClick={handleEdit}>edit card</button>
-      <button onClick={handleDelete}>delete card</button>
-      <button onClick={handleBack}>Back to Profile</button>
+      <div className={styles.card}>
+        <div
+          className={isActive ? styles.card_inner : styles.card_inner.isFlipped}
+        >
+          <div className={(styles.card_face, styles.card_faceFront)}>
+            <h2 onClick={() => setActive(!isActive)}>{card.name}</h2>
+          </div>
+          <div className={(styles.card_face, styles.card_faceBack)}>
+            <div className={styles.card_content}>
+              <div className={styles.card_body}>
+                <h2 onClick={() => setActive(!isActive)}>{card.content}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>{error}</p>
+
+        <button onClick={handleEdit}>edit card</button>
+        <button onClick={handleDelete}>delete card</button>
+        <button onClick={handleBack}>Back to Profile</button>
+      </div>
     </div>
   );
 }

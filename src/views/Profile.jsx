@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import UserCards from '../components/UserCards';
 import { getProfileCards } from '../services/cards';
 import { Link, Route } from 'react-router-dom';
-
+import styles from './Profile.css';
 import { useCard } from '../context/cardsContext/cardsContext';
 
 export default function Profile() {
@@ -72,7 +72,7 @@ export default function Profile() {
       <div>
         <h2>Your Personal Cards</h2>
 
-        <div>
+        <div className={styles.cards}>
           {cards.map((card) => (
             <div key={card.id}>
               <Link to={`/profile/${card.id}`}>{card.name}</Link>
