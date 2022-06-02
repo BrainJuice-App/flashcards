@@ -4,7 +4,6 @@ import { useProfileContext } from '../context/ProfileContext';
 import { useUser } from '../context/UserContext';
 import { getProfile } from '../services/profile';
 import { useEffect } from 'react';
-import UserCards from '../components/UserCards';
 import { getProfileCards } from '../services/cards';
 import { Link, Route } from 'react-router-dom';
 import styles from './Profile.css';
