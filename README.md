@@ -1,20 +1,23 @@
-### About BrainJuice ###
+### BrainJuice ###![brainstorm](https://user-images.githubusercontent.com/94511266/171746205-0b2d6468-6d0c-44b6-933b-d34c76a497ca.png)
+
 
 ### What is BrainJuice? ###
 
-Brain juice is an app that allows user to practice javascript flashcards. BrainJuuice lets user create new cards as well.
+Brain juice is a JavaScript study tool that allows users to ...sos need help  lolo;
 
 
 
 ### How it Works ###
 
 •Sign In or Sign Up
+
 •Shuffle Cards
+
 •Edit Profile:
 -edit first name, last name, user name and bio
 -upload picture
-•Create new card, edit and delete existing card user has made
 
+•Create new card, edit and delete existing card user has made
 
 
 ### Built With ###
