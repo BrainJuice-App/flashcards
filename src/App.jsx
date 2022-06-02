@@ -24,7 +24,7 @@ export default function App() {
       <div>
         <Toaster />
       </div>
-      {/* <CssBaseline /> */}
+ 
       <UserProvider>
         <ProfileProvider>
           <Header />
@@ -59,7 +59,7 @@ export default function App() {
           </Switch>
         </ProfileProvider>
       </UserProvider>
-      {/* <CssBaseline /> */}
+   
     </div>
   );
 }
