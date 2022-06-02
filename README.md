@@ -1,5 +1,4 @@
-### BrainJuice ###![brainstorm](https://user-images.githubusercontent.com/94511266/171746205-0b2d6468-6d0c-44b6-933b-d34c76a497ca.png)
-
+### BrainJuice 🧠###
 
 ### What is BrainJuice? ###
 
