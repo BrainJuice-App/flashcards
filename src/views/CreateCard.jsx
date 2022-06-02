@@ -32,7 +32,7 @@ export default function CreateCard() {
 
   return (
     <div className={styles.create}>
-      <h2>Create your own study card</h2>
+      <h2>Create your own study card!</h2>
       <div className={styles.form}>
         <CardForm submitCreateHandler={submitCreateHandler} />
       </div>
