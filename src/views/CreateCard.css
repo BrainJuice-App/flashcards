@@ -1,7 +1,11 @@
 .create {
   background-color: black;
+  width: auto;
+  height: 2000px;
 }
 h2 {
+  padding: 5%;
+  margin-left: 30%;
   color: red;
 }
 input {

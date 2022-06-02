@@ -8,13 +8,14 @@ import { getProfileCards } from '../services/cards';
 import { Link, Route } from 'react-router-dom';
 import styles from './Profile.css';
 import { useCard } from '../context/cardsContext/cardsContext';
+import { Button } from '@mui/material';
 
 export default function Profile() {
   const { cards, setCards, loading, setLoading } = useCard();
 
   const history = useHistory();
   const { user } = useUser();
-  // console.log('user.id', user.id);  returns mathching id
+ 
   const {
     firstName,
     setFirstName,
@@ -58,7 +59,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <>
+    <div className={styles.profile}>
       <div>
         <h2>{username ? username : user.email}'s Profile</h2>
         <h3>
@@ -66,7 +67,7 @@ export default function Profile() {
         </h3>
         <p>{bio}</p>
         <img src={image} height="150" />
-        {/* /// removes image on refresh, needs to be changed to image// */}
+      
       </div>
       <div>
         <h2>Your Personal Cards</h2>
@@ -74,18 +75,40 @@ export default function Profile() {
         <div className={styles.cards}>
           {cards.map((card) => (
             <div key={card.id}>
-              <Link to={`/profile/${card.id}`}>{card.name}</Link>
+              <Link style={{ color: 'white' }} to={`/profile/${card.id}`}>
+                {card.name}
+              </Link>
             </div>
           ))}
         </div>
 
-        {/* <UserCards /> */}
 
-        <button onClick={redirectToCreateCard}> Create Card</button>
+        <Button
+          sx={{
+            color: 'red',
+            backgroundColor: '#1826d2',
+            borderColor: 'green',
+            margin: '5px',
+          }}
+          onClick={redirectToCreateCard}
+        >
+          {' '}
+          Create Card
+        </Button>
       </div>
 
-      <button onClick={handleEditButtonClick}>Edit Profile</button>
-    </>
+      <Button
+        sx={{
+          color: 'red',
+          backgroundColor: '#1826d2',
+          borderColor: 'green',
+          margin: '5px',
+        }}
+        onClick={handleEditButtonClick}
+      >
+        Edit Profile
+      </Button>
+    </div>
   );
 }
 

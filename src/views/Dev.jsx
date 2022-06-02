@@ -1,6 +1,7 @@
 import React from 'react';
 import kamie from '../assets/kamie.jpeg';
 import styles from '../views/Dev.css';
+import yovana from '../assets/yovana.jpeg';
 
 export default function Dev() {
   return (
@@ -30,7 +31,7 @@ export default function Dev() {
         <p>Full Stack Software Engineer and I enjoy coding.</p>
         <a href="https://www.linkedin.com/in/yovana-pelayo/">
           <img
-            src={kamie}
+            src={yovana}
             style={{
               height: '250px',
               borderRadius: '8px',
