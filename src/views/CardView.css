@@ -103,3 +103,10 @@
   align-items: center;
   justify-content: center;
 }
+button {
+  color: red;
+  background-color: #1826d2;
+  border-color: green;
+  margin: 5px;
+  margin-left: 35px;
+}
