@@ -1,5 +1,5 @@
 import React from 'react';
-import kamieSnow from '../assets/kamieSnow.jpeg';
+import kamie from '../assets/kamie.jpeg';
 import styles from '../views/Dev.css';
 
 export default function Dev() {
@@ -11,14 +11,15 @@ export default function Dev() {
         <br />
         <br />
         <h2>Alex</h2>
-        <p>
-          Full Stack Software Engineer and I enjoy creating fun learning
-          environments.
-        </p>
+        <p>Full Stack Software Engineer and I enjoy coding.</p>
         <a href="https://www.linkedin.com/in/kamieshort/">
           <img
-            src={kamieSnow}
-            style={{ height: '150px', borderRadius: '8px' }}
+            src={kamie}
+            style={{
+              height: '250px',
+              borderRadius: '8px',
+              border: 'solid black',
+            }}
           />
         </a>
       </div>
@@ -26,14 +27,15 @@ export default function Dev() {
       <br />
       <div>
         <h2>Yovana</h2>
-        <p>
-          Full Stack Software Engineer and I enjoy creating fun learning
-          environments.
-        </p>
+        <p>Full Stack Software Engineer and I enjoy coding.</p>
         <a href="https://www.linkedin.com/in/kamieshort/">
           <img
-            src={kamieSnow}
-            style={{ height: '150px', borderRadius: '8px' }}
+            src={kamie}
+            style={{
+              height: '250px',
+              borderRadius: '8px',
+              border: 'solid black',
+            }}
           />
         </a>
       </div>
@@ -41,14 +43,15 @@ export default function Dev() {
       <br />
       <div>
         <h2>Kamie</h2>
-        <p>
-          Full Stack Software Engineer and I enjoy creating fun learning
-          environments.
-        </p>
+        <p>Full Stack Software Engineer and I enjoy gardening and learning.</p>
         <a href="https://www.linkedin.com/in/kamieshort/">
           <img
-            src={kamieSnow}
-            style={{ height: '150px', borderRadius: '8px' }}
+            src={kamie}
+            style={{
+              height: '250px',
+              borderRadius: '8px',
+              border: 'solid black',
+            }}
           />
         </a>
       </div>
