@@ -12,48 +12,54 @@ export default function Dev() {
         <br />
         <h2>Alex</h2>
         <p>Full Stack Software Engineer and I enjoy coding.</p>
-        <a href="https://www.linkedin.com/in/kamieshort/">
-          <img
-            src={kamie}
-            style={{
-              height: '250px',
-              borderRadius: '8px',
-              border: 'solid black',
-            }}
-          />
-        </a>
+        <div className={styles.imgBorder}>
+          <a href="https://www.linkedin.com/in/kamieshort/">
+            <img
+              src={kamie}
+              style={{
+                height: '250px',
+                // borderRadius: '8px',
+                border: 'solid black',
+              }}
+            />
+          </a>
+        </div>
       </div>
       <br />
       <br />
       <div>
         <h2>Yovana</h2>
         <p>Full Stack Software Engineer and I enjoy coding.</p>
-        <a href="https://www.linkedin.com/in/kamieshort/">
-          <img
-            src={kamie}
-            style={{
-              height: '250px',
-              borderRadius: '8px',
-              border: 'solid black',
-            }}
-          />
-        </a>
+        <div className={styles.imgBorder}>
+          <a href="https://www.linkedin.com/in/kamieshort/">
+            <img
+              src={kamie}
+              style={{
+                height: '250px',
+                // borderRadius: '8px',
+                border: 'solid black',
+              }}
+            />
+          </a>
+        </div>
       </div>
       <br />
       <br />
       <div>
         <h2>Kamie</h2>
         <p>Full Stack Software Engineer and I enjoy gardening and learning.</p>
-        <a href="https://www.linkedin.com/in/kamieshort/">
-          <img
-            src={kamie}
-            style={{
-              height: '250px',
-              borderRadius: '8px',
-              border: 'solid black',
-            }}
-          />
-        </a>
+        <div className={styles.imgBorder}>
+          <a href="https://www.linkedin.com/in/kamieshort/">
+            <img
+              src={kamie}
+              style={{
+                height: '250px',
+                // borderRadius: '8px',
+                border: 'solid black',
+              }}
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
