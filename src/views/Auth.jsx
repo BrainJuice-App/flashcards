@@ -139,7 +139,8 @@ export default function Auth() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="password"
+                placeholder="password"
                 type="password"
                 id="password"
                 autoComplete="current-password"
