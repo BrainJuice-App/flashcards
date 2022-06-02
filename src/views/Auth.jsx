@@ -61,7 +61,7 @@ export default function Auth() {
   };
 
   return (
-    <div>
+    <div className={styles.auth}>
       {error && <p>{`${error}`}</p>}
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
@@ -83,6 +83,7 @@ export default function Auth() {
                 backgroundColor: '#1826d2',
                 borderRadius: '8px',
                 borderColor: 'green',
+                fontFamily: 'Spline Sans Mono',
               }}
               component="h1"
               variant="h5"
@@ -126,6 +127,7 @@ export default function Auth() {
                   borderColor: 'green',
                   color: 'red',
                   borderRadius: '8px',
+                  fontFamily: 'Spline Sans Mono',
                 }}
                 value={email}
                 onChange={(e) => {
@@ -146,6 +148,7 @@ export default function Auth() {
                   backgroundColor: 'white',
                   borderColor: 'green',
                   borderRadius: '8px',
+                  fontFamily: 'Spline Sans Mono',
                 }}
                 value={password}
                 onChange={(e) => {
