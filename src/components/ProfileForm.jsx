@@ -60,6 +60,14 @@ export default function ProfileForm({ submitProfileHandler }) {
               label="First Name"
               name="first_name"
               autoFocus
+              sx={{
+                textDecorationColor: 'red',
+                backgroundColor: 'white',
+                borderColor: 'green',
+                color: 'red',
+                borderRadius: '8px',
+                fontFamily: 'Spline Sans Mono',
+              }}
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
@@ -70,6 +78,14 @@ export default function ProfileForm({ submitProfileHandler }) {
               label="Last Name"
               name="last_name"
               autoFocus
+              sx={{
+                textDecorationColor: 'red',
+                backgroundColor: 'white',
+                borderColor: 'green',
+                color: 'red',
+                borderRadius: '8px',
+                fontFamily: 'Spline Sans Mono',
+              }}
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
@@ -80,6 +96,14 @@ export default function ProfileForm({ submitProfileHandler }) {
               label="Username"
               name="user_name"
               autoFocus
+              sx={{
+                textDecorationColor: 'red',
+                backgroundColor: 'white',
+                borderColor: 'green',
+                color: 'red',
+                borderRadius: '8px',
+                fontFamily: 'Spline Sans Mono',
+              }}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -91,6 +115,15 @@ export default function ProfileForm({ submitProfileHandler }) {
                 id="bio"
                 label="Bio"
                 name="bio"
+                autoFocus
+                sx={{
+                  textDecorationColor: 'red',
+                  backgroundColor: 'white',
+                  borderColor: 'green',
+                  color: 'red',
+                  borderRadius: '8px',
+                  fontFamily: 'Spline Sans Mono',
+                }}
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
               />
