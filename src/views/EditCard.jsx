@@ -8,7 +8,7 @@ import UserCards from '../components/UserCards';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { getProfileCards, updateCards } from '../services/cards';
 import { toast } from 'react-hot-toast';
-
+import styles from './CreateCard.css';
 export default function EditCard() {
   const history = useHistory();
   const { name, content } = useCard();
@@ -30,9 +30,11 @@ export default function EditCard() {
   return (
     //createHandler function that will update instead of create a card, we will probably need id from params to update the correct row in supabase
 
-    <>
+    <div className={styles.create}>
       <div>EditCard</div>
-      <CardForm submitCreateHandler={submitCreateHandler} />
-    </>
+      <div className={styles.form}>
+        <CardForm submitCreateHandler={submitCreateHandler} />
+      </div>
+    </div>
   );
 }

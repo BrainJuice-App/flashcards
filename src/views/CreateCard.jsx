@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast';
 import { createCard } from '../services/cards';
 import { useUser } from '../context/UserContext';
 import { useProfileContext } from '../context/ProfileContext';
-
+import styles from './CreateCard.css';
 export default function CreateCard() {
   const { name, content } = useCard();
   // const { id } = useProfileContext();
@@ -31,9 +31,11 @@ export default function CreateCard() {
   };
 
   return (
-    <>
-      <div>Create your own study card:</div>
-      <CardForm submitCreateHandler={submitCreateHandler} />
-    </>
+    <div className={styles.create}>
+      <h2>Create your own study card</h2>
+      <div className={styles.form}>
+        <CardForm submitCreateHandler={submitCreateHandler} />
+      </div>
+    </div>
   );
 }

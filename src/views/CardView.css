@@ -11,12 +11,10 @@
   align-items: center;
   flex-direction: row;
   width: 400px;
-  /* border: white 2px solid; */
   display: flex;
 }
 .card {
   text-align: center;
-
   margin: 100px auto 0;
   width: 350px;
   height: 265px;
@@ -46,6 +44,7 @@
   height: 200px;
   margin: 20px auto;
   width: 200px;
+  color: red;
 }
 
 .card_inner {
