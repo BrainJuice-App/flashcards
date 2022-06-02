@@ -37,7 +37,7 @@ export default function CardView() {
     }
   }, [id]);
   return (
-    <div>
+    <div className={styles.topdiv}>
       <div className={styles.card}>
         <div
           className={isActive ? styles.card_inner : styles.card_inner.isFlipped}
@@ -53,43 +53,43 @@ export default function CardView() {
             </div>
           </div>
         </div>
-        <p>{error}</p>
-        <container>
-          <Button
-            sx={{
-              color: 'red',
-              backgroundColor: '#1826d2',
-              borderColor: 'green',
-              marginTop: '150px',
-            }}
-            onClick={handleEdit}
-          >
-            edit card
-          </Button>
-          <Button
-            sx={{
-              color: 'red',
-              backgroundColor: '#1826d2',
-              borderColor: 'green',
-              margin: '5px',
-            }}
-            onClick={handleDelete}
-          >
-            delete card
-          </Button>
-          <Button
-            sx={{
-              color: 'red',
-              backgroundColor: '#1826d2',
-              borderColor: 'green',
-              margin: '5px',
-            }}
-            onClick={handleBack}
-          >
-            Back to Profile
-          </Button>
-        </container>
       </div>
+      <p>{error}</p>
+      <container className={styles.buttoncontainer}>
+        <Button
+          sx={{
+            color: 'red',
+            backgroundColor: '#1826d2',
+            borderColor: 'green',
+            margin: '5px',
+          }}
+          onClick={handleEdit}
+        >
+          edit card
+        </Button>
+        <Button
+          sx={{
+            color: 'red',
+            backgroundColor: '#1826d2',
+            borderColor: 'green',
+            margin: '5px',
+          }}
+          onClick={handleDelete}
+        >
+          delete card
+        </Button>
+        <Button
+          sx={{
+            color: 'red',
+            backgroundColor: '#1826d2',
+            borderColor: 'green',
+            margin: '5px',
+          }}
+          onClick={handleBack}
+        >
+          Back to Profile
+        </Button>
+      </container>
     </div>
   );
 }
