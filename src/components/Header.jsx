@@ -26,6 +26,10 @@ export default function Header() {
     history.replace(`/profile`);
   };
 
+  const redirectToDev = () => {
+    history.replace(`/dev`);
+  };
+
   return (
     <>
       <div className={styles.header}>
@@ -97,6 +101,17 @@ export default function Header() {
               Signin/Signup Button
             </Button>
           )}
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+            }}
+            onClick={redirectToDev}
+          >
+            Meet the Devs
+          </Button>
         </div>
       </div>
     </>

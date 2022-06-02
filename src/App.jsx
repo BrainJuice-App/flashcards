@@ -12,9 +12,7 @@ import CreateCard from './views/CreateCard';
 import UserCards from './components/UserCards';
 import CardView from './views/CardView';
 import Home from './views/Home';
-
-import CssBaseline from '@mui/material/CssBaseline';
-import Card from './components/Card';
+import Dev from './views/Dev';
 import EditCard from './views/EditCard';
 import styles from './App.css';
 
@@ -24,7 +22,7 @@ export default function App() {
       <div>
         <Toaster />
       </div>
- 
+
       <UserProvider>
         <ProfileProvider>
           <Header />
@@ -50,8 +48,8 @@ export default function App() {
             <PrivateRoute exact path="/profile/:id/editCard">
               <EditCard />
             </PrivateRoute>
-            <Route exact path="/test">
-              <Card />
+            <Route exact path="/dev">
+              <Dev />
             </Route>
             <PrivateRoute exact path="/">
               <Home />
@@ -59,7 +57,6 @@ export default function App() {
           </Switch>
         </ProfileProvider>
       </UserProvider>
-   
     </div>
   );
 }
