@@ -45,12 +45,13 @@ export default function Profile() {
       setBio(data.bio);
       setImage(data.image);
       setCards(userCards);
+
       setLoading(false);
     };
     fetchProfile();
   }, []);
 
-  if (loading) return <p>loading</p>;
+  if (loading) return <div className={styles.spinner}>loading</div>;
   return (
     <div className={styles.profile}>
       <div>
