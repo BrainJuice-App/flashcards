@@ -1,4 +1,4 @@
-### BrainJuice 🧠###
+### BrainJuice 🧠 ###
 
 ### What is BrainJuice? ###
 
@@ -9,13 +9,10 @@ Brain juice is a JavaScript study tool that allows users to ...sos need help  lo
 ### How it Works ###
 
 •Sign In or Sign Up
-
 •Shuffle Cards
-
 •Edit Profile:
 -edit first name, last name, user name and bio
 -upload picture
-
 •Create new card, edit and delete existing card user has made
 
 
