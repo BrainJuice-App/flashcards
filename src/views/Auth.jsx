@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import styles from './Auth.css';
+// import styles from './Auth.css';
 import { toast } from 'react-hot-toast';
 import { GiBrain } from 'react-icons/gi';
 
@@ -24,6 +24,7 @@ import {
 
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createProfile } from '../services/profile';
+import styles from '../views/Auth.css';
 
 const theme = createTheme();
 
@@ -60,7 +61,7 @@ export default function Auth() {
   };
 
   return (
-    <>
+    <div className={styles.auth}>
       {error && <p>{`${error}`}</p>}
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
@@ -76,7 +77,17 @@ export default function Auth() {
             <Avatar sx={{ m: 1, bgcolor: '#1826d2' }}>
               <GiBrain size={42} />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography
+              sx={{
+                color: 'red',
+                backgroundColor: '#1826d2',
+                borderRadius: '8px',
+                borderColor: 'green',
+                fontFamily: 'Spline Sans Mono',
+              }}
+              component="h1"
+              variant="h5"
+            >
               <span
                 className={`${styles['auth-toggle']} ${
                   isSignUp ? '' : styles.selected
@@ -98,7 +109,8 @@ export default function Auth() {
               component="form"
               onSubmit={handleSubmit}
               noValidate
-              sx={{ mt: 1 }}
+              sx={{ mt: 1, margin: '0%' }}
+              // style={{ background: '#000' }}
             >
               <TextField
                 margin="normal"
@@ -109,6 +121,14 @@ export default function Auth() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                sx={{
+                  textDecorationColor: 'red',
+                  backgroundColor: 'white',
+                  borderColor: 'green',
+                  color: 'red',
+                  borderRadius: '8px',
+                  fontFamily: 'Spline Sans Mono',
+                }}
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -123,6 +143,13 @@ export default function Auth() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                sx={{
+                  color: 'red',
+                  backgroundColor: 'white',
+                  borderColor: 'green',
+                  borderRadius: '8px',
+                  fontFamily: 'Spline Sans Mono',
+                }}
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -132,7 +159,13 @@ export default function Auth() {
               <Button
                 onClick={handleSubmit}
                 variant="contained"
-                style={{ margin: '20px' }}
+                sx={{
+                  color: 'red',
+                  backgroundColor: '#1826d2',
+                  borderColor: 'green',
+                  margin: '5px',
+                  marginLeft: '35px',
+                }}
               >
                 {isSignUp ? 'Sign up' : 'Sign in'}
               </Button>
@@ -143,6 +176,6 @@ export default function Auth() {
           </Box>
         </Container>
       </ThemeProvider>
-    </>
+    </div>
   );
 }

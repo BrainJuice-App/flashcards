@@ -14,3 +14,10 @@
 .auth-menu {
   margin-bottom: 4rem;
 }
+
+.auth {
+  background-color: black;
+  background-size: 100vh;
+  margin: 0%;
+  font-family: 'Spline Sans Mono', monospace;
+}
