@@ -19,7 +19,6 @@ export const UserProvider = ({ children }) => {
 
   const signup = async (email, password) => {
     const resp = await signUpUser({ email, password });
-    console.log(resp);
     await createProfile(resp.id);
 
     if (resp) {

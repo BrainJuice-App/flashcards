@@ -23,7 +23,6 @@ export async function updateProfile(profile) {
       image: profile.image,
     })
     .match({ id: profile.id });
-  console.log('resp', resp);
 
   return checkError(resp);
 }

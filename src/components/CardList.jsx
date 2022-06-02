@@ -15,13 +15,11 @@ export default function CardList({ newCards }) {
     const getData = async () => {
       const data = await getCards();
       setCards(data); //slice here???
-      // console.log('data', data);
       setLoading(false);
     };
     getData();
   }, []);
   if (loading) return <div>loading</div>;
-  console.log(cards);
 
   return (
     <>

@@ -16,7 +16,6 @@ export default function EditCard() {
 
   const submitCreateHandler = async (e) => {
     e.preventDefault();
-    console.log('click', name, content);
 
     const update = {
       name: name,
