@@ -33,32 +33,38 @@ export default function Dev() {
       <div>
         <h2>Yovana</h2>
         <p>Full Stack Software Engineer and I enjoy coding.</p>
-        <a href="https://www.linkedin.com/in/yovana-pelayo/">
-          <img
-            src={yovana}
-            style={{
-              height: '250px',
-              borderRadius: '8px',
-              border: 'solid black',
-            }}
-          />
-        </a>
+        <div className={styles.imgBorder}>
+          <a href="https://www.linkedin.com/in/yovana-pelayo/">
+            <img
+              src={yovana}
+              style={{
+                objectFit: 'cover',
+                width: '98%',
+                height: '98%',
+                border: 'solid black',
+              }}
+            />
+          </a>
+        </div>
       </div>
       <br />
       <br />
       <div>
         <h2>Alex</h2>
         <p>Full Stack Software Engineer and I enjoy gardening and learning.</p>
-        <a href="https://www.linkedin.com/in/alexorlet89/">
-          <img
-            src={alex}
-            style={{
-              height: '250px',
-              borderRadius: '8px',
-              border: 'solid black',
-            }}
-          />
-        </a>
+        <div className={styles.imgBorder}>
+          <a href="https://www.linkedin.com/in/alexorlet89/">
+            <img
+              src={alex}
+              style={{
+                width: '98%',
+                height: '98%',
+                border: 'solid black',
+                // borderRadius: '8px',
+              }}
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
