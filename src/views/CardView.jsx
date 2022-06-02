@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { deleteCard, getProfileCards, updateCards } from '../services/cards';
 import styles from './CardView.css';
+import { Button } from '@mui/material';
+
 export default function CardView() {
   const [isActive, setActive] = useState(false);
   const { id } = useParams();
@@ -52,10 +54,41 @@ export default function CardView() {
           </div>
         </div>
         <p>{error}</p>
-
-        <button onClick={handleEdit}>edit card</button>
-        <button onClick={handleDelete}>delete card</button>
-        <button onClick={handleBack}>Back to Profile</button>
+        <container>
+          <Button
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+              marginTop: '150px',
+            }}
+            onClick={handleEdit}
+          >
+            edit card
+          </Button>
+          <Button
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+              margin: '5px',
+            }}
+            onClick={handleDelete}
+          >
+            delete card
+          </Button>
+          <Button
+            sx={{
+              color: 'red',
+              backgroundColor: '#1826d2',
+              borderColor: 'green',
+              margin: '5px',
+            }}
+            onClick={handleBack}
+          >
+            Back to Profile
+          </Button>
+        </container>
       </div>
     </div>
   );
