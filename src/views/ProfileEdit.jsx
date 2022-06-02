@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { toast } from 'react-hot-toast';
 import Upload from '../components/Upload';
 import { useProfileContext } from '../context/ProfileContext';
+import styles from './CreateCard.css';
 
 export default function ProfileEdit() {
   const {
@@ -49,17 +50,19 @@ export default function ProfileEdit() {
   }, [avatarUrl, setImageUrl]);
 
   return (
-    <>
-      <div>Edit your profile</div>
-      <ProfileForm submitProfileHandler={submitProfileHandler} />
+    <div className={styles.create}>
+      <h2>Edit your profile</h2>
+      <div className={styles.form}>
+        <ProfileForm submitProfileHandler={submitProfileHandler} />
 
-      <Upload
-        url={avatarUrl}
-        size={150}
-        onUpload={(url) => {
-          setAvatarUrl(url);
-        }}
-      />
-    </>
+        <Upload
+          url={avatarUrl}
+          size={150}
+          onUpload={(url) => {
+            setAvatarUrl(url);
+          }}
+        />
+      </div>
+    </div>
   );
 }
