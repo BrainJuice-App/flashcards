@@ -28,11 +28,6 @@ export default function Home() {
           backgroundColor: '#1826d2',
           borderColor: 'green',
           marginLeft: '35px',
-
-          // maxWidth: '500px',
-          // maxHeight: '100px',
-          // minWidth: '500px',
-          // minHeight: '100px',
         }}
         onClick={shuffleCards}
       >

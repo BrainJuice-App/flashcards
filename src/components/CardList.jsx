@@ -14,7 +14,7 @@ export default function CardList({ newCards }) {
   useEffect(() => {
     const getData = async () => {
       const data = await getCards();
-      setCards(data); //slice here???
+      setCards(data);
       setLoading(false);
     };
     getData();

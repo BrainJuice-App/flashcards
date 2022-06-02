@@ -27,8 +27,6 @@ export default function EditCard() {
     toast.success('You have successfully updated a card!');
   };
   return (
-    //createHandler function that will update instead of create a card, we will probably need id from params to update the correct row in supabase
-
     <div className={styles.create}>
       <div>EditCard</div>
       <div className={styles.form}>

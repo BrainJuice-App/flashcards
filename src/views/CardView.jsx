@@ -94,5 +94,3 @@ export default function CardView() {
     </div>
   );
 }
-
-//things to do here, back to profile button, redirect after delete button, fix edit button to render card form with card values.

@@ -21,7 +21,6 @@ export default function Dev() {
               src={kamie}
               style={{
                 height: '250px',
-                // borderRadius: '8px',
                 border: 'solid black',
               }}
             />
@@ -60,7 +59,6 @@ export default function Dev() {
                 width: '98%',
                 height: '98%',
                 border: 'solid black',
-                // borderRadius: '8px',
               }}
             />
           </a>
