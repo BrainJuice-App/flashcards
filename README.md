@@ -2,15 +2,14 @@
 
 ### What is BrainJuice? ###
 
-Brain juice is a JavaScript study tool that allows users to ...sos need help  lolo;
-
+BrainJuice is a JavaScript study tool that allows users to study using a classic flashcard approach with the option to add customizable cards.
 
 
 ### How it Works ###
 
 •Sign In or Sign Up
 •Shuffle Cards
-•Edit Profile:
+•Crate/Edit Profile:
 -edit first name, last name, user name and bio
 -upload picture
 •Create new card, edit and delete existing card user has made
