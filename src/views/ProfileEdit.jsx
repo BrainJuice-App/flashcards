@@ -25,7 +25,7 @@ export default function ProfileEdit() {
   const history = useHistory();
 
   const submitProfileHandler = async (e) => {
-    console.log('profile edit button pushed');
+    ('profile edit button pushed');
     e.preventDefault;
 
     const updates = {

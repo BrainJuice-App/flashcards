@@ -28,7 +28,7 @@ export default function CardView() {
     try {
       const getData = async () => {
         const cards = await getProfileCards();
-        console.log(cards, id);
+        cards, id;
         const selectedCard = cards.find((card) => card.id === Number(id));
         setCard(selectedCard);
       };

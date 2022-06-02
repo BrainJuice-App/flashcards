@@ -11,7 +11,6 @@ export default function UserCards() {
     const getData = async () => {
       const data = await getProfileCards();
       setCards(data);
-      console.log('cardata', data);
       setLoading(false);
     };
     getData();

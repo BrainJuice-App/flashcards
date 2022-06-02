@@ -55,7 +55,6 @@ export default function Auth() {
       history.push('/');
     } catch (error) {
       setError(error);
-      console.log(error);
     }
     toast.success(`Welcome ${email}!`);
   };

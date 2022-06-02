@@ -31,7 +31,6 @@ export default function CardForm({ submitCreateHandler }) {
       const getData = async () => {
         const cards = await getProfileCards();
         const selectedCard = cards.find((card) => card.id === Number(id));
-        console.log(selectedCard);
         setContent(selectedCard.content);
         setName(selectedCard.name);
       };
