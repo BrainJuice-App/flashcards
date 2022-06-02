@@ -1,6 +1,8 @@
 import React from 'react';
 import kamie from '../assets/kamie.jpeg';
+import alex from '../assets/alex.jpeg';
 import yovana from '../assets/yovana.jpeg';
+
 import styles from '../views/Dev.css';
 
 export default function Dev() {
@@ -11,7 +13,7 @@ export default function Dev() {
       <div>
         <br />
         <br />
-        <h2>Alex</h2>
+        <h2>Kamie</h2>
         <p>Full Stack Software Engineer and I enjoy coding.</p>
         <a href="https://www.linkedin.com/in/kamieshort/">
           <img
@@ -43,11 +45,11 @@ export default function Dev() {
       <br />
       <br />
       <div>
-        <h2>Yovana</h2>
+        <h2>Alex</h2>
         <p>Full Stack Software Engineer and I enjoy gardening and learning.</p>
-        <a href="https://www.linkedin.com/in/kamieshort/">
+        <a href="https://www.linkedin.com/in/alexorlet89/">
           <img
-            src={kamie}
+            src={alex}
             style={{
               height: '250px',
               borderRadius: '8px',
