@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-// import styles from './Auth.css';
 import { toast } from 'react-hot-toast';
 import { GiBrain } from 'react-icons/gi';
 
@@ -108,7 +107,6 @@ export default function Auth() {
               onSubmit={handleSubmit}
               noValidate
               sx={{ mt: 1, margin: '0%' }}
-              // style={{ background: '#000' }}
             >
               <TextField
                 margin="normal"

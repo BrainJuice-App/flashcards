@@ -61,7 +61,6 @@ export default function Dev() {
                 width: '98%',
                 height: '98%',
                 border: 'solid black',
-                // borderRadius: '8px',
               }}
             />
           </a>

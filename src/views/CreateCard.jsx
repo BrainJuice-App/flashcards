@@ -11,7 +11,6 @@ import { useProfileContext } from '../context/ProfileContext';
 import styles from './CreateCard.css';
 export default function CreateCard() {
   const { name, content } = useCard();
-  // const { id } = useProfileContext();
   const { user } = useUser();
 
   const history = useHistory();
@@ -20,7 +19,6 @@ export default function CreateCard() {
     e.preventDefault();
 
     const create = {
-      // id: user.id,
       name: name,
       content: content,
       creator: user.id,

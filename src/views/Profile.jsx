@@ -103,5 +103,3 @@ export default function Profile() {
     </div>
   );
 }
-
-//profile cards to be fetched and rendered here, they link to profile/id page for editing...

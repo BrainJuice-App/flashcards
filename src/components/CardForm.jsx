@@ -21,7 +21,6 @@ import { getProfileCards } from '../services/cards';
 const theme = createTheme();
 
 export default function CardForm({ submitCreateHandler }) {
-  //we will nneed params id, but !id... if id, fetch card by id, setname/setContent to the data we get from the fetch call...
   const { name, content, creator, setName, setContent, setCreator } = useCard();
 
   const { id } = useParams();
