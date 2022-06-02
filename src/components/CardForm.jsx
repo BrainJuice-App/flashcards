@@ -69,6 +69,14 @@ export default function CardForm({ submitCreateHandler }) {
               label="Question"
               name="name"
               autoFocus
+              sx={{
+                textDecorationColor: 'red',
+                backgroundColor: 'white',
+                borderColor: 'green',
+                color: 'red',
+                borderRadius: '8px',
+                fontFamily: 'Spline Sans Mono',
+              }}
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -79,6 +87,14 @@ export default function CardForm({ submitCreateHandler }) {
               label="Answer"
               name="name"
               autoFocus
+              sx={{
+                textDecorationColor: 'red',
+                backgroundColor: 'white',
+                borderColor: 'green',
+                color: 'red',
+                borderRadius: '8px',
+                fontFamily: 'Spline Sans Mono',
+              }}
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './CreateCard.css';
 import { useCard } from '../context/cardsContext/cardsContext';
 
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -31,9 +31,9 @@ export default function CreateCard() {
   };
 
   return (
-    <>
-      <div>Create your own study card:</div>
+    <div className={styles.create}>
+      <h2>Create your own study card:</h2>
       <CardForm submitCreateHandler={submitCreateHandler} />
-    </>
+    </div>
   );
 }

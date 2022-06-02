@@ -28,7 +28,7 @@ export default function Dev() {
       <div>
         <h2>Yovana</h2>
         <p>Full Stack Software Engineer and I enjoy coding.</p>
-        <a href="https://www.linkedin.com/in/kamieshort/">
+        <a href="https://www.linkedin.com/in/yovana-pelayo/">
           <img
             src={kamie}
             style={{

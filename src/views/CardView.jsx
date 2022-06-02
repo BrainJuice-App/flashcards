@@ -36,6 +36,7 @@ export default function CardView() {
   }, [id]);
   return (
     <div>
+      <p>{error}</p>
       <div className={styles.card}>
         <div
           className={isActive ? styles.card_inner : styles.card_inner.isFlipped}
@@ -51,7 +52,6 @@ export default function CardView() {
             </div>
           </div>
         </div>
-        <p>{error}</p>
 
         <button onClick={handleEdit}>edit card</button>
         <button onClick={handleDelete}>delete card</button>
