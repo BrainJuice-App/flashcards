@@ -10,8 +10,8 @@ BrainJuice is a JavaScript study tool that allows users to study using a classic
 •Sign In or Sign Up
 •Shuffle Cards
 •Crate/Edit Profile:
--edit first name, last name, user name and bio
--upload picture
+•edit first name, last name, user name and bio
+•upload picture
 •Create new card, edit and delete existing card user has made
 
 
