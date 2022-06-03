@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { useCard } from '../context/cardsContext/cardsContext';
 import { getCards } from '../services/cards';
-import CardView from '../views/CardView';
 import Card from './Card';
 import styles from '../components/CardList.css';
 
